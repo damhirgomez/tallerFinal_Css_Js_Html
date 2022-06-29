@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: monospace;
+  font-size: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font: 18px/1.5 "Open Sans", sans-serif;
+  background: #292a2b;
+  color: white;
+  margin: 1.5rem 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.formulario h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.formulario li,
+.formulario .grid {
+  margin-top: 10px;
+}
+.correcto {
+    width: 100%;
+    line-height: 1.5;
+    padding: 15px 10px;
+    border: 1px solid;
+    color: whitesmoke;
+    background: rgb(24, 24, 24);
+    transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+      transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.formulario button {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid;
+  color: whitesmoke;
+  background-color: rgb(24, 24, 24);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+textarea {
+  height: 170px;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario button:hover,
+.formulario button:focus {
+  background: rgb(62, 28, 28);
+  transform: scale(1.05);
+}
+
+.formulario button {
+  font-weight: bold;
+}
+/* .correcto-on {
+    background-color: red;
+} */
+
+.formulario button > * {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+p {
+    font-family: monospace;
+    color: rgb(248, 76, 105);
+    text-align: center;
+}
+
+.formulario__mensaje-exito {
+    font-size: 1.5em;
+    display: none;
+}
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+.error-mensaje {
+    font-size: 1.5em;
+    display: none;
+}
+.error_mensaje {
+  font-size: 1.5em;
+  display: none;
+}
+
+.error-mensaje-activo {
+    display: block;
+}
+
+.error {
+    display: none;
+}
+
+.incorrecto {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid;
+  color: whitesmoke;
+  background-color: red;
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}

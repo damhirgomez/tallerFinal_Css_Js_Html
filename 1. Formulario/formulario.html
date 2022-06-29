@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script async src="script.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Formulario sofka</title>
+</head>
+
+<body>
+  <form class="formulario" id="formulario">
+    <div class="container">
+      <h1>Formulario sofka</h1>
+      <ul>
+        <li>
+          <div class="grid grid-2 nombre">
+            <input name="nombre" class="correcto" id="nombre-box" type="text" placeholder="Nombre completo" required />
+            <p class="error-mensaje">Campo sin llenar</p>
+          </div>
+        </li>
+        <li>
+          <div class="grid grid-2 email">
+            <input name="email" id="email-box" class="correcto" type="email" placeholder="Email" required />
+            <p class="error-mensaje">Formato de correo erroneo </p>
+          </div>
+        </li>
+        <li>
+          <div class="grid grid-2 asunto">
+            <input name="asunto" class="correcto" id="asunto-box" type="text" placeholder="Asunto" required />
+            <p class="error-mensaje">Campo sin llenar</p>
+          </div>
+        </li>
+        <li>
+          <div class="grid grid-2 mensaje" >
+          <textarea name="mensaje" class="correcto" id="mensaje-box" placeholder="Message"></textarea>
+          <p class="error-mensaje">Campo sin llenar</p>
+        </div>
+        </li>
+        <li>
+          <div class="formulario__mensaje" id="formulario__mensaje">
+            <p class="error_mensaje" id="error_mensaje_box">Debes completar todos los campos</p>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">El formulario se envió correctamente</p>
+          </div>
+          <div class="grid grid-3">
+            <button class="btn-grid" type="submit">
+              <span class="material-icons back">send</span>
+              <span class="front">SEND</span>
+            </button>
+            <button class="btn-grid" type="reset">
+              <span class="material-icons back">refresh</span>
+              <span class="front">RESET</span>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </form>
+</body>
+
+</html>
