@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller 3 PSeInt</title>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller 3 PSeInt</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 1</button>
+        <div class="panel">
+            <p>
+                Realizar la siguiente figura por medio del <strong>ciclo Para</strong>
+
+            </p>
+            <br>
+            <img src="/3. portafolio/img/asteriscos_1.jpg" alt="">
+            <br>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso Taller_3_ejercicio_1
+                        Definir control_1, control_2, control_3 Como Entero;
+
+                        Para control_1 <- 1 Hasta 10 Con Paso 1 Hacer
+                            Para control_2<-1 Hasta control_1 Con Paso 1 Hacer
+                                Escribir '*'; sin saltar
+                            FinPara
+                            Escribir '';
+                        FinPara
+
+                    FinProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 2</button>
+        <div class="panel">
+            <p>
+                Realizar la siguiente figura por medio del ciclo <strong>Mientras - Hacer</strong>
+            </p>
+            <br>
+            <img src="/3. portafolio/img/asteriscos_2.jpg" alt="">
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+                Proceso Taller_3_ejercicio_2
+                    Definir control_1, control_2, control_3 Como Entero;
+                    control_1 <- 10;
+                    control_2 <- 1;
+                    control_3 <- 1;
+                    
+                    Mientras control_3 <= 10 Hacer
+                        Mientras control_1 >= control_3 Hacer
+                            Escribir ' '; sin saltar
+                            control_1 <- control_1 - 1;
+                        FinMientras
+                        Mientras control_2 <= control_3 Hacer
+                            Escribir '*'; sin saltar
+                            control_2 <- control_2 + 1;
+                        FinMientras
+                        Escribir '';
+                        control_3 <- control_3 + 1;
+                        control_1 <- 10;
+                        control_2 <- 1;
+                    FinMientras
+                    
+                FinProceso
+              </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 3</button>
+        <div class="panel">
+            <p>
+                Realizar la siguiente figura por medio del ciclo <strong>Repetir - Hasta Que</strong>
+            </p>
+            <br>
+            <img src="/3. portafolio/img/asteriscos_3.jpg" alt="">
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+                Proceso Taller_3_ejercicio_3
+                    Definir control_1, control_2, control_3, control_4, contador, tallo_1,tallo_2,tallo_3,contador_tallo , control_tallo Como Entero;
+                    control_1 <- 11;
+                    control_2 <- 10;
+                    control_3 <- 1;
+                    control_4 <- 10;
+                    contador <- 1;
+                    tallo_1 <- 10;
+                    tallo_2 <- 3;
+                    tallo_3 <- 10;
+                    contador_tallo <- 2;
+                    control_tallo <- 2;
+                    Repetir
+                        Repetir
+                            Escribir ' ' Sin Saltar;
+                            control_2 <- control_2 - 1;
+                        Hasta Que control_2 <= -2;
+                        Repetir
+                            Escribir '*' Sin Saltar;
+                            control_3 <- control_3 - 1;
+                        Hasta Que control_3 = 0;
+                        Repetir
+                            Escribir ' ' Sin Saltar;
+                            control_4 <- control_4 - 1;
+                        Hasta Que control_4 <= -2;
+                        Escribir '';
+                        contador <- contador + 2;
+                        control_1 <- control_1 - 1;
+                        control_2 <- control_1 - 1;
+                        control_3 <- contador;
+                        control_4 <- control_1 - 1;
+                    Hasta Que control_1 = 0
+                    Repetir
+                        Repetir
+                            Escribir  ' ' Sin Saltar;
+                            tallo_1 <- tallo_1 - 1;
+                        Hasta Que tallo_1 <= -2;
+                        Repetir
+                            Escribir  '*' Sin Saltar;
+                            tallo_2 <- tallo_2 - 1;
+                        Hasta Que tallo_2 <= 0;
+                        Repetir
+                            Escribir  ' ' Sin Saltar;
+                            tallo_3 <- tallo_3 - 1;
+                        Hasta Que tallo_3 <= -2;
+                        tallo_1 <- 10;
+                        tallo_2 <- 3;
+                        tallo_3 <- 10;
+                        Escribir '';
+                        contador_tallo <- contador_tallo - 1;
+                    Hasta Que contador_tallo <= 0;
+                    contador_tallo <- 2;
+                    tallo_1 <- 9;
+                    tallo_2 <- 5;
+                    tallo_3 <- 9;
+                    Repetir
+                        Repetir
+                            Escribir  ' ' Sin Saltar;
+                            tallo_1 <- tallo_1 - 1;
+                        Hasta Que tallo_1 <= -2;
+                        Repetir
+                            Escribir  '*' Sin Saltar;
+                            tallo_2 <- tallo_2 - 1;
+                        Hasta Que tallo_2 <= 0;
+                        Repetir
+                            Escribir  ' ' Sin Saltar;
+                            tallo_3 <- tallo_3 - 1;
+                        Hasta Que tallo_3 <= -2;
+                        tallo_1 <- 9 - 1;
+                        tallo_2 <- 5 + 2;
+                        tallo_3 <- 9 - 1;
+                        Escribir '';
+                        contador_tallo <- contador_tallo - 1;
+                    Hasta Que contador_tallo <= 0;
+                FinProceso
+              </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 4</button>
+        <div class="panel">
+            <p>
+                Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por
+                medio del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear
+                la tabla del 5, entonces el resultado debería ser el siguiente:
+            </p>
+            <br>
+            <img src="/3. portafolio/img/multiplicar_1.jpg" alt="">
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+                Proceso Taller_3_ejercicio_4
+                    Definir entrada, control, multiplicacion  Como Entero;
+                    Escribir 'Por favor ingrese el numero del que desea saber la tabla de multiplicar';
+                    Leer entrada;
+                    
+                    Para control<-1 Hasta 10 Con Paso 1 Hacer
+                        multiplicacion <- entrada * control;
+                        Escribir entrada, ' X ',control,' = ', multiplicacion; 
+                    FinPara
+                    
+                FinProceso
+              </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 5</button>
+        <div class="panel">
+            <p>
+                Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee
+                terminar dicho ciclo.
+            </p>
+            <br>
+            <img src="/3. portafolio/img/menu_inf.jpg" alt="">
+            <div class="codigo">
+                <pre>
+            <code class="language-markup">
+                Proceso Taller_3_ejercicio_5
+                    Definir opcion Como Entero;
+                    Definir nombre Como Caracter;
+                    Repetir
+                        Escribir 'Bienvenido ingrese su nombre.';
+                        Leer nombre;
+                        Escribir 'Un saludo ', nombre;
+                        Escribir 'Presione 1 para salir del sistema.';
+                        Escribir 'O si desea otro saludo ingrese 2';
+                        Leer opcion;
+                    Hasta Que opcion = 1;
+                    
+                FinProceso
+            </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 6</button>
+        <div class="panel">
+            <p>
+                Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos
+                telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y
+                organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté
+                almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el
+                sistema debe terminar cuando el usuario así lo indique.
+            </p>
+            <div class="codigo">
+                <pre>
+            <code class="language-markup">
+                Proceso Taller_3_ejercicio_6
+                    Definir nombre, organizacion, nombre_2, organizacion_2, nombre_3, organizacion_3 Como Caracter;
+                    Definir opcion, telefono, opcion_contactos, telefono_2, telefono_3, opcion_eliminar, contador_contactos Como Entero;
+                    contador_contactos <- 0;
+                    nombre_3 <- 'Inexistente ';
+                    telefono_3 <- 0;
+                    organizacion_3 <- 'Inexistente ';
+                    nombre_2 <- 'Inexistente ';
+                    telefono_2 <- 0;
+                    organizacion_2 <- 'Inexistente ';
+                    
+                    Repetir
+                        Escribir '1. Crear nuevo contacto';
+                        Escribir '2. Buscar contactos ';
+                        Escribir '3. Eliminar contactos';
+                        Escribir '4. Salir';
+                        leer opcion;
+                        Segun opcion Hacer
+                            1:
+                                Escribir 'Indique el contacto que quiere guardar maximo 1 al 3';
+                                Leer opcion_contactos;
+                                Segun opcion_contactos Hacer
+                                    1:
+                                        Escribir 'Ingrese el nombre del contacto';
+                                        Leer nombre;
+                                        Escribir 'Ingrese la organización del contacto';
+                                        Leer organizacion;
+                                        Escribir 'Ingrese el número del contacto';
+                                        Leer telefono;
+                                        contador_contactos <- contador_contactos + 1;
+                                    2:
+                                        
+                                        Escribir 'Ingrese el nombre del contacto 2';
+                                        Leer nombre_2;
+                                        Escribir 'Ingrese la organización del contacto 2';
+                                        Leer organizacion_2;
+                                        Escribir 'Ingrese el número del contacto 2';
+                                        Leer telefono_2;
+                                        contador_contactos <- contador_contactos + 1;
+
+                                    3:
+                                        
+                                        Escribir 'Ingrese el nombre del contacto 3';
+                                        Leer nombre_3;
+                                        Escribir 'Ingrese la organización del contacto 3';
+                                        Leer organizacion_3;
+                                        Escribir 'Ingrese el número del contacto 3';
+                                        Leer telefono_3;
+                                        contador_contactos <- contador_contactos + 1;
+
+                                    De Otro Modo:
+                                        Escribir 'Opcion incorrecta';
+                                FinSegun
+                            2:
+                                Segun contador_contactos Hacer
+                                    1:
+                                        Escribir 'Contactos almacenados:';
+                                        Escribir '1. ', nombre,' telefono: ', telefono,' organización ', organizacion;
+                                    2:
+                                        Escribir 'Contactos almacenados:';
+                                        Escribir '1. ', nombre,' telefono: ', telefono,' organización ', organizacion;
+                                        Escribir '2. ', nombre_2,' telefono: ', telefono_2,' organización ', organizacion_2;
+                                    3:
+                                        Escribir 'Contactos almacenados:';
+                                        Escribir '1. ', nombre,' telefono: ', telefono,' organización ', organizacion;
+                                        Escribir '2. ', nombre_2,' telefono: ', telefono_2,' organización ', organizacion_2;
+                                        Escribir '3. ', nombre_3,' telefono: ', telefono_3,' organización ', organizacion_3;
+                                    De Otro Modo:
+                                        Escribir 'Error';
+                                FinSegun
+                            3:
+                                Escribir 'Seleccione el numero del contacto que desea eliminar: 1, 2 o 3';
+                                Leer opcion_eliminar;
+                                Segun opcion_eliminar Hacer
+                                    1:
+                                        nombre <- ' ';
+                                        telefono <- 0;
+                                        organizacion <- ' ';
+                                    2:
+                                        nombre_2<- ' ';
+                                        telefono_2 <- 0;
+                                        organizacion_2 <- ' ';
+                                    3:
+                                        nombre_3 <- ' ';
+                                        telefono_3 <- 0;
+                                        organizacion_3 <- ' ';
+                                    De Otro Modo:
+                                        Escribir 'Opción incorrecta';
+                                FinSegun
+                            De Otro Modo:
+                        FinSegun
+                    Hasta Que opcion = 4;
+                FinProceso
+            </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 7</button>
+        <div class="panel">
+            <p>
+                El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y
+                requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se
+                sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del
+                cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de
+                ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el
+                parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente
+                que el parqueadero solo puede almacenar máximo 5 vehículos.
+            </p>
+            <div class="codigo">
+                <pre>
+            <code class="language-markup">
+            Proceso Taller_3_ejercicio_7
+                    Definir placa, marca, nombre Como Caracter;
+                    Definir placa2, marca2, nombre2 Como Caracter;
+                    Definir placa3, marca3, nombre3 Como Caracter;
+                    Definir placa4, marca4, nombre4 Como Caracter;
+                    Definir placa5, marca5, nombre5 Como Caracter;
+                    Definir telefono, opcion, opcion_ingreso,telefono2,telefono3,telefono4,telefono5, opcion_retiro Como Entero;
+                    nombre <- 'No existe';
+                    telefono <- 0;
+                    marca<-'No existe';
+                    placa<-'No existe';
+                    nombre2 <- 'No existe';
+                    telefono2 <- 0;
+                    marca2<-'No existe';
+                    placa2<-'No existe';
+                    nombre3 <- 'No existe';
+                    telefono3 <- 0;
+                    marca3<-'No existe';
+                    placa3<-'No existe';
+                    nombre4 <- 'No existe';
+                    telefono4 <- 0;
+                    marca4<-'No existe';
+                    placa4<-'No existe';
+                    nombre5 <- 'No existe';
+                    telefono5 <- 0;
+                    marca5<-'No existe';
+                    placa5<-'No existe';
+                    opcion_ingreso <- 0;
+
+                    
+                    Repetir
+                        Escribir 'Bienvenido a El Guardian, seleccione alguna de las opciones a continuacion';
+                        Escribir '1. Ingresar datos de vehiculos';
+                        Escribir '2. Retiro de vehiculo';
+                        Escribir '3. consulta de vehiculo';
+                        Escribir '4. Salir';
+                        Leer opcion;
+                        Segun opcion Hacer
+                            1:
+                                opcion_ingreso <- 1 + opcion_ingreso;
+                                Segun opcion_ingreso Hacer
+                                    1:
+                                        Escribir 'Selecciono la opcion ingreso de vehiculo por favor ingrese los datos a continuación';
+                                        Escribir 'Nombre del propietario';
+                                        Leer nombre;
+                                        Escribir 'Telefono del propietario';
+                                        Leer telefono;
+                                        Escribir 'Placa del vehiculo';
+                                        Leer placa;
+                                        Escribir 'Marca del vehiculo';
+                                        Leer marca;
+                                        Escribir 'El vehiculo marca ', marca,' De placas ', placa,' Fue ingresado correctamente';
+                                    2:
+                                        Escribir 'Selecciono la opcion ingreso de vehiculo por favor ingrese los datos a continuación';
+                                        Escribir 'Nombre del propietario';
+                                        Leer nombre2;
+                                        Escribir 'Telefono del propietario';
+                                        Leer telefono2;
+                                        Escribir 'Placa del vehiculo';
+                                        Leer placa2;
+                                        Escribir 'Marca del vehiculo';
+                                        Leer marca2;
+                                        Escribir 'El vehiculo marca ', marca2,' De placas ', placa2,' Fue ingresado correctamente';
+                                    3:	
+                                        Escribir 'Selecciono la opcion ingreso de vehiculo por favor ingrese los datos a continuación';
+                                        Escribir 'Nombre del propietario';
+                                        Leer nombre3;
+                                        Escribir 'Telefono del propietario';
+                                        Leer telefono3;
+                                        Escribir 'Placa del vehiculo';
+                                        Leer placa3;
+                                        Escribir 'Marca del vehiculo';
+                                        Leer marca3;
+                                        Escribir 'El vehiculo marca ', marca3,' De placas ', placa3,' Fue ingresado correctamente';
+                                    4: 
+                                        Escribir 'Selecciono la opcion ingreso de vehiculo por favor ingrese los datos a continuación';
+                                        Escribir 'Nombre del propietario';
+                                        Leer nombre4;
+                                        Escribir 'Telefono del propietario';
+                                        Leer telefono4;
+                                        Escribir 'Placa del vehiculo';
+                                        Leer placa4;
+                                        Escribir 'Marca del vehiculo';
+                                        Leer marca4;
+                                        Escribir 'El vehiculo marca ', marca4,' De placas ', placa4,' Fue ingresado correctamente';
+                                        opcion_ingreso <- opcion_ingreso + 1;
+                                    5: 						Escribir 'Selecciono la opcion ingreso de vehiculo por favor ingrese los datos a continuación';
+                                        Escribir 'Nombre del propietario';
+                                        Leer nombre4;
+                                        Escribir 'Telefono del propietario';
+                                        Leer telefono4;
+                                        Escribir 'Placa del vehiculo';
+                                        Leer placa4;
+                                        Escribir 'Marca del vehiculo';
+                                        Leer marca4;
+                                        Escribir 'El vehiculo marca ', marca5,' De placas ', placa5,' Fue ingresado correctamente';
+                                FinSegun
+                            2:
+                                Escribir 'Usted a seleccionado retiro de vehiculo, por favor seleccion la opcion de su vehiculo';
+                                Escribir '1. Nombre: ', nombre,' Telefono: ',telefono,' Placa: ', placa,' Marca: ',marca;
+                                Escribir '2. Nombre: ', nombre2,' Telefono: ',telefono2,' Placa: ', placa2,' Marca: ',marca2;
+                                Escribir '3. Nombre: ', nombre3,' Telefono: ',telefono3,' Placa: ', placa3,' Marca: ',marca3;
+                                Escribir '4. Nombre: ', nombre4,' Telefono: ',telefono4,' Placa: ', placa4,' Marca: ',marca4;
+                                Escribir '5. Nombre: ', nombre5,' Telefono: ',telefono5,' Placa: ', placa5,' Marca: ',marca5;
+                                Leer opcion_retiro;
+                                Segun opcion_retiro Hacer
+                                    1:
+                                        nombre <- 'No existe';
+                                        telefono <- 0;
+                                        marca<-'No existe';
+                                        placa<-'No existe';
+                                    2:
+                                        nombre2 <- 'No existe';
+                                        telefono2 <- 0;
+                                        marca2<-'No existe';
+                                        placa2<-'No existe';
+                                    3:
+                                        nombre3 <- 'No existe';
+                                        telefono3 <- 0;
+                                        marca3<-'No existe';
+                                        placa3<-'No existe';
+                                    4:
+                                        nombre4 <- 'No existe';
+                                        telefono4 <- 0;
+                                        marca4<-'No existe';
+                                        placa4<-'No existe';
+                                    5:
+                                        nombre5 <- 'No existe';
+                                        telefono5 <- 0;
+                                        marca5<-'No existe';
+                                        placa5<-'No existe';
+                                FinSegun
+                                
+                                
+                            3:
+                                Escribir 'Usted ha seleccionado consulta de vehiculos';
+                                Escribir 'Los vehiculos que se escuentran en el parqueadero son: ';
+                                Escribir '1. Nombre: ', nombre,' Telefono: ',telefono,' Placa: ', placa,' Marca: ',marca;
+                                Escribir '2. Nombre: ', nombre2,' Telefono: ',telefono2,' Placa: ', placa2,' Marca: ',marca2;
+                                Escribir '3. Nombre: ', nombre3,' Telefono: ',telefono3,' Placa: ', placa3,' Marca: ',marca3;
+                                Escribir '4. Nombre: ', nombre4,' Telefono: ',telefono4,' Placa: ', placa4,' Marca: ',marca4;
+                                Escribir '5. Nombre: ', nombre5,' Telefono: ',telefono5,' Placa: ', placa5,' Marca: ',marca5;
+                            
+                        FinSegun
+                    Hasta Que opcion = 4;
+                FinProceso
+            </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 8</button>
+        <div class="panel">
+            <p>
+                La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en
+                los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el
+                trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso
+                al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si
+                fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga
+                presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.
+            </p>
+            <div class="codigo">
+                <pre>
+            <code class="language-markup">
+                Proceso Taller_3_ejercicio_8
+                    Definir nombre, aprobo, curso Como Caracter;
+                    Definir nombre2, aprobo2, curso2 Como Caracter;
+                    Definir nombre3, aprobo3, curso3 Como Caracter;
+                    Definir nombre4, aprobo4, curso4 Como Caracter;
+                    Definir nombre5, aprobo5, curso5 Como Caracter;
+                    Definir nombre6, aprobo6, curso6 Como Caracter;
+                    Definir nombre7, aprobo7, curso7 Como Caracter;
+                    Definir nombre8, aprobo8, curso8 Como Caracter;
+
+                    
+                    Definir opcion, contador Como Entero;
+                    contador <- 0;
+                    nombre <- 'No existe';
+                    aprobo <- 'Sin informacion';
+                    curso <- 'Sin informacion';
+                    nombre2 <- 'No existe';
+                    aprobo2 <- 'Sin informacion';
+                    curso2 <- 'Sin informacion';
+                    nombre3 <- 'No existe';
+                    aprobo3 <- 'Sin informacion';
+                    curso3 <- 'Sin informacion';
+                    nombre4 <- 'No existe';
+                    aprobo4 <- 'Sin informacion';
+                    curso4 <- 'Sin informacion';
+                    nombre5 <- 'No existe';
+                    aprobo5 <- 'Sin informacion';
+                    curso5 <- 'Sin informacion';
+                    nombre6 <- 'No existe';
+                    aprobo6 <- 'Sin informacion';
+                    curso6 <- 'Sin informacion';
+                    nombre7 <- 'No existe';
+                    aprobo7 <- 'Sin informacion';
+                    curso7 <- 'Sin informacion';
+                    nombre8 <- 'No existe';
+                    aprobo8 <- 'Sin informacion';
+                    curso8 <- 'Sin informacion';
+
+                    
+                    Repetir
+                        Escribir 'Escuela automovilistica el Maestro, por favor seleccione una opciòn';
+                        Escribir '1. Ingresar nuevo usuario';
+                        Escribir '2. Consultar usuario y resultados del curso';
+                        Escribir '3. Salir';
+                        Leer opcion;
+                        Segun opcion Hacer
+                            1:
+                                contador <- contador +1;
+                                Segun contador Hacer
+                                    1:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo;
+                                    2:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre2;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso2;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo2;
+                                    3:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre3;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso3;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo3;
+                                    4:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre4;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso4;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo4;
+                                    5:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre5;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso5;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo5;
+                                    6:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre6;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso6;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo6;
+                                    7:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre7;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso7;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo7;
+                                    8:
+                                        Escribir 'Por favor ingrese El nombre del usuario';
+                                        Leer nombre8;
+                                        Escribir 'Ingrese si realizo el curso o no';
+                                        Leer curso8;
+                                        Escribir 'Ingrese si aprobo el curso o no';
+                                        Leer aprobo8;
+                                FinSegun
+
+                            2:
+                                Escribir 'Estos son los usuarios registrados con su respectiva informacion';
+                                Escribir '1. ', nombre, ' Realizo curso: ', curso, ', aprobo el curso: ', aprobo;
+                                Escribir '2. ', nombre2, ' Realizo curso: ', curso2, ', aprobo el curso: ', aprobo2;
+                                Escribir '3. ', nombre3, ' Realizo curso: ', curso3, ', aprobo el curso: ', aprobo3;
+                                Escribir '4. ', nombre4, ' Realizo curso: ', curso4, ', aprobo el curso: ', aprobo4;
+                                Escribir '5. ', nombre5, ' Realizo curso: ', curso5, ', aprobo el curso: ', aprobo5;
+                                Escribir '6. ', nombre6, ' Realizo curso: ', curso6, ', aprobo el curso: ', aprobo6;
+                                Escribir '7. ', nombre7, ' Realizo curso: ', curso7, ', aprobo el curso:', aprobo7;
+                                Escribir '8. ', nombre8, ' Realizo curso: ', curso8, ', aprobo el curso: ', aprobo8;
+                        FinSegun
+                    Hasta Que opcion = 3;
+
+
+                    
+                FinProceso
+            </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Video</button>
+        <div class="panel">
+            <p>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/uWqqNGWBBUg"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </p>
+        </div>
+    </div>
+    <div class="contenedor_botones">
+        <a href="pseint.html" class="boton_final">
+            <span>Página principal</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

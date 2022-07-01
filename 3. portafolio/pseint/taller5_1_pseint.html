@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller condicionales</title>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller de condicionales hechos con funciones PSeInt</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 1</button>
+        <div class="panel">
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+                años, deberá mostrar en pantalla: Usted es mayor de edad.
+            </p>
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+            Proceso taller_5_ejercicio_1
+	
+                Definir edad Como Entero;
+                edad <- capturar('Digite su edad');
+                comparar(edad);
+                
+            FinProceso
+            
+            SubProceso dato <- capturar(mensaje)
+                
+                Definir dato Como Entero;
+                Escribir mensaje;
+                Leer dato;
+                
+            FinSubProceso
+            
+            SubProceso comparar(year)
+                
+                Si year >= 18 Entonces
+                    Escribir 'Usted es mayor de edad';
+                FinSi
+                
+            FinSubProceso
+              </code>
+          </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 2</button>
+        <div class="panel">
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años,
+                deberá mostrar en pantalla: Usted aún es un niño(a).
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_2
+	
+                        Definir edad Como Entero;
+                        edad <- capturar('Digite su edad');
+                        comparar(edad);
+                        
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        
+                        Definir dato Como Entero;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso comparar(year)
+                        
+                        Si year < 18 Entonces
+                            Escribir 'Usted aun es un niño';
+                        FinSi
+                        
+                    FinSubProceso
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 3</button>
+        <div class="panel">
+            <p>
+                Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+                mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de
+                edad, por lo tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces,
+                deberá imprimirse el siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede
+                entrar a la fiesta, por favor devuélvase a su casa.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_3
+                        Definir nombre, apellidos Como Caracter;
+                        Definir edad Como Entero;
+                        nombre <- capturar('Escriba su nombre');
+                        apellidos <- capturar('Escriba su apellido');
+                        edad <- born('Escriba su edad');
+                        Comparacion(edad,nombre,apellidos);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso year <- born(mensaje)
+                        Definir year Como Entero;
+                        Escribir mensaje;
+                        Leer year;
+                    FinSubProceso
+                    
+                    SubProceso Comparacion(variable1,variable2,variable3)
+                        
+                        Si variable1 >= 18 Entonces
+                            Escribir variable2,' ',variable3,' usted es mayor de edad, por lo tanto, puede entrar a la fiesta';
+                        SiNo
+                            Escribir variable2,' ',variable3,' usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuelvase a su casa';
+                        FinSi
+                        
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 4</button>
+        <div class="panel">
+            <p>
+                La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir,
+                requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus
+                usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas
+                disponibles y recibir película en la video tienda con la opción de realizar anotaciones sobre estas si
+                se llegan a presentar daños u otra novedad sobre la película.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_4
+                        Definir nombre Como Caracter;
+                        Definir userOpcion Como Entero;
+                        nombre <- capturar('Digite su nombre');
+                        Escribir 'Buen día señor(a) ',nombre;
+                        Escribir '1. Ver peliculas disponibles y alquilar una pelicula';
+                        Escribir '2. Entregar una pelicula';
+                        Escribir '3. Reportar una novedad sobre su película';
+                        userOpcion <- option('por favor elija un opción');
+                        escoger(userOpcion);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso opcion <- option(mensaje)
+                        Definir opcion Como Entero;
+                        Escribir mensaje;
+                        leer opcion;
+                        
+                    FinSubProceso
+                    
+                    SubProceso escoger(variable)
+                        Definir  opcion_pelicula Como Entero;
+                        Definir peliculas, estado_pelicula, novedad_pelicula Como Caracter;
+                        Segun variable Hacer
+                            1:
+                                Escribir 'Has elegido alquilar una pelicula';
+                                Escribir 'A continuación veras las peliculas disponibles';
+                                Escribir '1. El titanic';
+                                Escribir '2. El lobo de wallstreet';
+                                Escribir '3. Avengers';
+                                Escribir '4. Spiderman';
+                                Escribir '5. El aro';
+                                Escribir '6. No quiero ninguna película';
+                                Escribir 'Por favor digite el número de la película que desea alquilar';
+                                Leer opcion_pelicula;
+                                Si (opcion_pelicula = 1) o (opcion_pelicula = 2) o (opcion_pelicula = 3) o (opcion_pelicula = 4) o (opcion_pelicula = 5) Entonces
+                                    Escribir 'Has escogido la película número',' ', opcion_pelicula,', tienes 1 semana para devolverla';
+                                SiNo
+                                    Escribir 'Has escogido una película inexistente o no te gusta ninguna de las peliculas en el catálogo';
+                                FinSi
+                                
+                            2:
+                                Escribir 'Has elegido entregar una película';
+                                Escribir 'Por favor ingresa el nombre de la pelicula a entregar';
+                                Leer peliculas;
+                                Escribir 'Por favor ingrese si la pelicula esta en buen estado físico y funcional';
+                                Leer estado_pelicula;
+                                Si estado_pelicula = 'si' Entonces
+                                    Escribir 'Muchas gracias, la pelicula a devolver sera ', peliculas,' la cual se encuentra en buen estado';
+                                SiNo
+                                    Escribir 'Debe pagar una multa por la pelicula ',peliculas,' ya que no esta en buen estado';
+                                FinSi
+                                
+                            3:
+                                Escribir 'Por favor indique que novedad tiene su película';
+                                Leer novedad_pelicula;
+                                Escribir 'Una persona se comunicara con usted para solucionar la novedad con la película',' (', novedad_pelicula,')';
+                                
+                            De Otro Modo:
+                                Escribir 'La opcion elegida es incorrecta';
+                        FinSegun
+                    FinSubProceso
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 5</button>
+        <div class="panel">
+            <p>
+                La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder
+                facturar los productos que vende a sus clientes y para ello, los productos tienen unas características
+                que deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se
+                tienen las opciones de compra de producto, consulta de precios por producto y devoluciones en caso de
+                que se presenten.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_5
+	
+                        Definir nombre Como Caracter;
+                        Definir userOpcion Como Entero;
+                        nombre <- capturar('Bienvenido a la drogueria SUBA, ingrese su nombre completo');
+                        Escribir 'Buen día señor(a) ',nombre;
+                        Escribir '1. Consultar productos disponibles';
+                        Escribir '2. Comprar un producto';
+                        Escribir '3. Hacer una devolución';
+                        userOpcion <- option('por favor elija un opción');
+                        escoger(userOpcion);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso opcion <- option(mensaje)
+                        Definir opcion Como Entero;
+                        Escribir mensaje;
+                        leer opcion;
+                        
+                    FinSubProceso
+                    
+                    SubProceso escoger(variable)
+                        Definir  opcion_producto Como Entero;
+                        Definir devolucion Como Caracter;
+                        Segun variable Hacer
+                            1:
+                                Escribir 'Has elegido consultar los productos disponibles';
+                                Escribir 'A continuación veras los productos disponibles, sus características y su precio';
+                                Escribir '1. Dolex gripa $800 c/u';
+                                Escribir '2. Pastillas VIC $2.500 sobre x 10 unidades';
+                                Escribir '3. Curitas $1.000 sobre x 2 unidades';
+                                Escribir '4. Jarabe para la tos $14.000 tarro x 120ml';
+                                Escribir 'Por favor ingrese el número del producto que le interesaría comprar';
+                                Leer opcion_producto;
+                                Si (opcion_producto = 1) o (opcion_producto = 2) o (opcion_producto = 3) o (opcion_producto = 4)  Entonces
+                                    Escribir 'Para comprar el producto número ', opcion_producto,' por favor reinicie el programa y escoja la opcion de compra';
+                                FinSi
+                                
+                                
+                                
+                            2:
+                                Escribir 'A continuación veras los productos disponibles y su precio';
+                                Escribir '1. Dolex gripa $800 c/u';
+                                Escribir '2. Pastillas VIC $2.500 sobre x 10 unidades';
+                                Escribir '3. Curitas $1.000 sobre x 2 unidades';
+                                Escribir '4. Jarabe para la tos $14.000 tarro x 120ml';
+                                Escribir 'Escribe el numero del producto que deseas comprar';
+                                Leer opcion_producto;
+                                Si (opcion_producto = 1) o (opcion_producto = 2) o (opcion_producto = 3) o (opcion_producto = 4)  Entonces
+                                    Escribir 'Has escogido el producto número ',opcion_producto;
+                                SiNo
+                                    Escribir 'Has escogido un producto inexistente o no quieres ninguno de los productos en el catálogo';
+                                FinSi
+                                
+                                
+                            3:
+                                Escribir 'Por favor indique el nombre del producto el cual quiere devolver';
+                                Leer devolucion;
+                                Escribir 'Una persona se comunicara con usted para solucionar la devolucion del producto',' (', devolucion,')';
+                                
+                            De Otro Modo:
+                                Escribir 'La opcion elegida es incorrecta';
+                        FinSegun
+                        
+                        
+                    FinSubProceso
+                    </code> 
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 6</button>
+        <div class="panel">
+            <p>
+                El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas
+                revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes.
+                Para cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del
+                cliente. También debe existir registro de salida del taller con las novedades y otra de arreglos hechos
+                por el mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al
+                entregarla.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_6
+                        Definir nombre_cliente, marca_moto, placa_moto,dano, repuestos, novedades, inventario Como Caracter;
+                        Definir userOpcion Como Entero;
+                        nombre_cliente <- capturar('Bienvenido al taller El Maquinista, por favor ingrese su nombre completo');
+                        Escribir 'Buen día señor(a) ',nombre_cliente;
+                        Escribir '1. Ingreso para reparación';
+                        Escribir '2. Salida del taller';
+                        userOpcion <- option('por favor elija un opción');
+                        marca_moto <- capturar('Por favor ingrese la marca de la moto');
+                        placa_moto <- capturar('Por favor ingrese la placa de la moto');
+                        escoger(userOpcion,nombre_cliente,marca_moto,placa_moto);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso opcion <- option(mensaje)
+                        Definir opcion Como Entero;
+                        Escribir mensaje;
+                        leer opcion;
+                        
+                    FinSubProceso
+                    
+                    SubProceso escoger(variable1,variable2, variable3, variable4)
+                        Definir dano, novedades, inventario Como Caracter;
+                        Segun variable1 Hacer
+                            1:
+                                Escribir 'Usted eligio ingreso para reparación';
+                                Escribir 'Por favor ingrese el daño o problema de su moto';
+                                Leer dano;
+                                Escribir 'Señor ', variable2,' su moto marca ', variable3, ' de placas ', variable4, ' entrara en revisión para el daño ', dano;
+                            2:
+                                Escribir 'Usted eligio Salida del taller';
+                                Escribir 'Describa las novedades del mecanico para el arreglo de la motocicleta';
+                                Leer novedades;
+                                Escribir 'Describa los repuestos del mecanico para el arreglo de la motocicleta';
+                                Leer repuestos;
+                                Escribir 'Desea inventariar los repuestos usados en la reparación';
+                                Leer inventario;
+                                Escribir 'Señor ', variable2,' su moto marca ', variable3, ' de placas ', variable4, ' esta lista';
+                                Escribir 'El daño indicado por usted fue reparado y presento las siguientes novedades ', novedades,' y se usaron los siguientes repuestos ', repuestos;
+                                
+                            De Otro Modo:
+                                Escribir 'La opción elegida es incorrecta';
+                        FinSegun
+                        
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 7</button>
+        <div class="panel">
+            <p>
+                La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de
+                masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada
+                adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango
+                se encuentra (bajo peso, normal, sobrepeso y obeso).
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_7
+	
+                        Definir nombre Como Caracter;
+                        Definir peso, cedula Como Entero;
+                        Definir estatura Como Real;
+                        nombre <- informacion('Escribe tu nombre');
+                        peso <- capturar('Escriba su peso');
+                        cedula <- capturar('Escriba su cedula');
+                        estatura <- informacion_2('Escriba su estatura');
+                        calculo(peso,estatura);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        
+                        Definir dato Como Entero;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso info <- informacion(mensaje)
+                        
+                        Definir info Como Caracter;
+                        Escribir mensaje;
+                        Leer info;
+                        
+                    FinSubProceso
+                    
+                    SubProceso info_2 <- informacion_2(mensaje)
+                        
+                        Definir info_2 Como Real;
+                        Escribir mensaje;
+                        Leer info_2;
+                        
+                    FinSubProceso
+                    
+                    SubProceso calculo(variable1,variable2)
+                        Definir imc Como Real;
+                        imc <-(variable1)/(variable2)^2;
+                        Si imc < 18.5 Entonces
+                            Escribir 'Su IMC es ', imc, ' lo cual indica que esta bajo de peso';
+                        SiNo
+                            Si (imc >= 18.5) Y (imc <= 24.9) Entonces
+                                Escribir 'Su IMC es ', imc, ' lo cual indica que esta en su peso ideal';
+                            SiNo
+                                Si (imc >= 25) Y (imc <= 29.9) Entonces
+                                    Escribir 'Su IMC es ', imc, ' lo cual indica que esta en sobre peso';
+                                SiNo
+                                    Escribir 'Su IMC es ', imc, ' lo cual indica que esta obeso';
+                                FinSi
+                            FinSi
+                        FinSi
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 8</button>
+        <div class="panel">
+            <p>
+                El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita
+                registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas
+                características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación
+                permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_8
+	
+                        Definir nombre_cliente, sabor, relleno Como Caracter;
+                        Definir porciones, decoracion Como Entero;
+                        nombre_cliente <- capturar('Bienvenido a la pasteleria por favor ingrese su nombre completo');
+                        Escribir 'Buen día señor(a) ',nombre_cliente;
+                        porciones <- option('por favor elija cantidad de porciones');
+                        sabor <- capturar('Ingrese el sabor: Vainilla, chocolate, redvelvet, cookies and cream');
+                        relleno <- capturar('Ingrese el relleno: Arequipe, chocolate y crema de queso');
+                        decoracion <- option('Desea una decoración: 1 para si 2 para no');
+                        escoger(decoracion,nombre_cliente,porciones,sabor,relleno);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso opcion <- option(mensaje)
+                        Definir opcion Como Entero;
+                        Escribir mensaje;
+                        leer opcion;
+                        
+                    FinSubProceso
+                    
+                    SubProceso escoger(variable1,variable2, variable3, variable4,variable5)
+                        Definir precio Como Entero;
+                        Segun variable1 Hacer
+                            1:
+                                precio<-variable3*5000+2000;
+                                Escribir 'Señor ',variable2,' El valor de su torta de sabor ', variable4,' con relleno de ',variable5,' y con ',variable3,' porciones',' es de $',precio;
+                                Escribir 'Sus ventas de hoy fueron tortas ',variable4,' con relleno de ',variable5,' y con ',variable3,' porciones',;
+                                Escribir 'Con un total de $',precio;
+                            2:
+                                precio<-porciones*5000;
+                                Escribir 'Señor ',variable2,' El valor de su torta de sabor ', variable4,' con relleno de ',variable5,' y con ',variable3,' porciones',' es de $',precio;
+                                Escribir 'Sus ventas de hoy fueron tortas ',variable4,' con relleno de ',variable5,' y con ',variable3,' porciones',;
+                                Escribir 'Con un total de $',precio;
+                            De Otro Modo:
+                                Escribir 'error opcion incorrecta';
+                        FinSegun
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 9</button>
+        <div class="panel">
+            <p>
+                El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de
+                diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio
+                solicitándole los valores al estudiante. La aplicación debe permitir que el estudiante seleccione si
+                desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios
+                para realizar cada cálculo y mostrar su respectivo resultado.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_9
+                        Definir figura Como Entero;
+                        Escribir '1. Rectángulo';
+                        Escribir '2. Triángulo';
+                        Escribir '3. Trapecio';
+                        figura <- option('Ingrese que tipo de figura desea para calcular su área');
+                        figura_escogida(figura);
+                    FinProceso
+                    
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso opcion <- option(mensaje)
+                        Definir opcion Como Entero;
+                        Escribir mensaje;
+                        leer opcion;
+                        
+                    FinSubProceso
+                    
+                    SubProceso figura_escogida(variable)
+                        Definir largo, ancho, area,base_1,base_2 Como Real;
+                        Segun variable Hacer
+                            1:
+                                Escribir 'Para calcular el área del rectángulo se requiere el largo y ancho';
+                                Escribir 'Por favor ingrese el largo';
+                                leer largo;
+                                Escribir 'Por favor ingrese el ancho';
+                                leer ancho;
+                                area<-largo * ancho;
+                                Escribir 'El área de su rectángulo es ',area;
+                            2:
+                                Escribir 'Para calcular el área del Triángulo se requiere la base y altura';
+                                Escribir 'Por favor ingrese el alto';
+                                leer largo;
+                                Escribir 'Por favor ingrese la base';
+                                leer ancho;
+                                area<-(largo * ancho)/2;
+                                Escribir 'El área de su triángulo es ',area;
+                            3:
+                                Escribir 'Para calcular el área del trapecio se requiere las bases y la altura';
+                                Escribir 'Por favor ingrese la base numero 1';
+                                leer base_1;
+                                Escribir 'Por favor ingrese la base numero 2';
+                                leer base_2;
+                                Escribir 'Por favor ingrese la altura';
+                                leer largo;
+                                area<-((base_1+base_2) * largo)/2;
+                                Escribir 'El área de su trapecio es ',area;
+                            De Otro Modo:
+                                Escribir 'Opción incorrecta';
+                        FinSegun
+                    
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <button class="menu-acordeon">Ejercicio 10</button>
+        <div class="panel">
+            <p>
+                El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación
+                para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos
+                titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de
+                valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser
+                mayor al valor que tiene en la cuenta.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_10
+                        Definir nombre Como Caracter;
+                        Definir saldo, opcion Como Entero;
+                        nombre <- capturar('Bienvenido al banco fiel, ingrese su nombre completo para crear su cuenta');
+                        saldo <- option('Ahora por favor ingrese el saldo con el que desea crear su cuenta');
+                        
+                        Escribir 'Señor(a) ', nombre,' Por favor escoja una de las siguiente opciones';
+                        Escribir '1. Ingresar dinero';
+                        Escribir '2. Retirar dinero';
+                        Escribir '3. Consultar saldo';
+                        opcion <- option('');
+                        segun_opcion(opcion,nombre,saldo);
+                    FinProceso
+                    
+                    SubProceso dato <- capturar(mensaje)
+                        Definir dato Como Caracter;
+                        Escribir mensaje;
+                        Leer dato;
+                        
+                    FinSubProceso
+                    
+                    SubProceso opcion <- option(mensaje)
+                        Definir opcion Como Entero;
+                        Escribir mensaje;
+                        leer opcion;
+                        
+                    FinSubProceso
+                    
+                    SubProceso segun_opcion(variable1, variable2, variable3)
+                        Definir  cantidad Como Entero;
+                        Segun variable1 Hacer
+                            1:
+                                Escribir 'Por favor digite la cantidad que desea ingresar a su cuenta';
+                                leer cantidad;
+                                Si cantidad < 0 Entonces
+                                    Escribir 'Error la cantidad no puede ser negativa';
+                                SiNo
+                                    variable3<-cantidad+variable3;
+                                    Escribir 'Señor(a) ', variable2,' su cuenta ahora tiene la cantidad de ', variable3;
+                                FinSi
+                            2:
+                                Escribir 'Por favor digite la cantidad que desea retirar de su cuenta';
+                                leer cantidad;
+                                Si cantidad > variable3 entonces
+                                    Escribir 'Error la cantidad no puede ser mayor que su saldo actual';
+                                SiNo
+                                    variable3<-variable3 - cantidad;
+                                    Escribir 'Señor(a) ', variable2,' su cuenta ahora tiene la cantidad de ', variable3;
+                                FinSi
+                            3:
+                                Escribir 'El saldo de su cuenta actualmente es ',variable3;
+                                
+                            De Otro Modo:
+                                Escribir 'Error opción incorrecta';
+                        FinSegun
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="contenedor_botones">
+        <a href="pseint_taller5.html" class="boton_final">
+            <span>Volver a taller 5</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

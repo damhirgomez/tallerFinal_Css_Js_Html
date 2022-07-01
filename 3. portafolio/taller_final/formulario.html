@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="root">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <script async src="script.js"></script>
-
-  <link rel="stylesheet" href="style.css" />
+  <script async src="/3. portafolio/javascript/formulario_script.js"></script>
+  <link rel="stylesheet" href="/3. portafolio/estilos/style_formulario.css" />
   <title>Formulario sofka</title>
 </head>
 
-<body>
+<body onload="main()">
   <form class="formulario" id="formulario">
     <div class="container">
       <h1>Formulario sofka</h1>
@@ -36,10 +35,10 @@
           </div>
         </li>
         <li>
-          <div class="grid grid-2 mensaje" >
-          <textarea name="mensaje" class="correcto" id="mensaje-box" placeholder="Message"></textarea>
-          <p class="error-mensaje">Campo sin llenar</p>
-        </div>
+          <div class="grid grid-2 mensaje">
+            <textarea name="mensaje" class="correcto" id="mensaje-box" placeholder="Message"></textarea>
+            <p class="error-mensaje">Campo sin llenar</p>
+          </div>
         </li>
         <li>
           <div class="formulario__mensaje" id="formulario__mensaje">
@@ -60,6 +59,13 @@
       </ul>
     </div>
   </form>
+  <div class="contenedor_botones">
+    <a href="/3. portafolio/portafolio.html" class="boton_final">
+      <span>Página principal</span>
+      <svg>
+        <rect x="0" y="0" fill="none"></rect>
+      </svg></a>
+  </div>
 </body>
 
 </html>

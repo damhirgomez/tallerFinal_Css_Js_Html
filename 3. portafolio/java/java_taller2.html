@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller 2 java</title>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller 2 java</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 1</button>
+        <div class="panel">
+            <p>Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+                años, deberá mostrar en pantalla: Usted es mayor de edad.</p> <br>
+            <p>Clase principal</p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                edad_usuario.edad();
+                                edad_usuario.mayor_edad();
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase edad_usuario</p>
+                <pre>
+                    <code class="language-java">
+                        import java.util.Scanner;
+
+                        public class edad_usuario {
+                            public static int edad;
+                        
+                            public static void edad() {
+                                try (Scanner sc = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su edad: ");
+                                    edad = sc.nextInt();
+                                }
+                        
+                            }
+                        
+                            public static void mayor_edad() {
+                                if (edad >= 18) {
+                                    System.out.println("Usted es mayor de edad");
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 2</button>
+        <div class="panel">
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años,
+                deberá mostrar en pantalla: Usted aún es un niño(a).
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                edad_usuario.edad();
+                                edad_usuario.mayor_edad();
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase edad_usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class edad_usuario {
+                            public static int edad;
+                        
+                            public static void edad() {
+                                try (Scanner sc = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su edad: ");
+                                    edad = sc.nextInt();
+                                }
+                        
+                            }
+                        
+                            public static void mayor_edad() {
+                                if (edad >= 18) {
+                                    System.out.println("Usted es mayor de edad");
+                                } else {
+                                    System.out.println("Usted aun es un niño");
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 3</button>
+        <div class="panel">
+            <p>
+                Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+                mayor o igual a 18 años, entonce se deberá imprimir en pantalla <strong> [Nombre completo] usted es
+                    mayor de
+                    edad, por lo tanto puede entrar a la fiesta.</strong> Si la edad de la persona es menor que 18 años,
+                entonces,
+                deberá imprimirse el siguiente mensaje: <strong>[Nombre completo] usted es menor de edad, por lo tanto,
+                    no puede entrar a la fiesta, por favor devuélvase a su casa.</strong>
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                usuario.edad_nombres();
+                                usuario.mayor_edad();
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+                            public static int edad;
+                            public static String nombre;
+                        
+                            public static void edad_nombres() {
+                                try (Scanner sc = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su edad: ");
+                                    edad = sc.nextInt();
+                                    sc.nextLine();
+                                    System.out.println("Ingrese su nombre completo: ");
+                                    nombre = sc.nextLine();
+                                }
+                        
+                            }
+                        
+                            public static void mayor_edad() {
+                                if (edad >= 18) {
+                                    System.out.println(nombre + " usted es mayor de edad, por lo tanto puede ingresar a la fiesta");
+                                } else {
+                                    System.out.println(nombre + " usted es menor de edad, por lo tanto no puede ingresar a la fiesta");
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 4</button>
+        <div class="panel">
+            <p>
+                La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir,
+                requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus
+                usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas
+                disponibles y recibir película en la video tienda con la opción de realizar anotaciones sobre estas si
+                se llegan a presentar daños u otra novedad sobre la película.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                usuario.nombre_usuario();
+                                int opcion = Consola.leerEntero();
+                                switch (opcion) {
+                                    case 1:
+                                        Consola.escribir("Ha elegido ver peliculas disponibles, las opciones son: ");
+                                        Consola.escribir("1. El aro");
+                                        Consola.escribir("2. La vida es bella");
+                                        Consola.escribir("3. Toy story");
+                                        int opcion_pelicula = Consola.leerEntero();
+                                        if (opcion_pelicula == 1) {
+                                            Consola.escribir("Ha elegido El aro");
+                                        } else if (opcion_pelicula == 2) {
+                                            Consola.escribir("Ha elegido La vida es bella");
+                                        } else if (opcion_pelicula == 3) {
+                                            Consola.escribir("Ha elegido Toy story");
+                                        } else {
+                                            Consola.escribir("Ha elegido una opcion no valida");
+                                        }
+                                        break;
+                                    case 2:
+                                        Consola.escribir("Entregar una pelicula");
+                                        String nombre_pelicula = Consola.leer("Por favor ingrese el nombre de la pelicula a entregar");
+                                        String estado_pelicula = Consola.leer(
+                                                "Indique la palabra si, si la pelicula esta en buen estado o la palabra no, si la pelicula esta en mal estado");
+                                        if (estado_pelicula.equals("si")) {
+                                            Consola.escribir("La pelicula " + nombre_pelicula + " esta en buen estado");
+                                        } else if (estado_pelicula.equals("no")) {
+                                            Consola.escribir("La pelicula " + nombre_pelicula + " esta en mal estado, debera pagar una multa");
+                                        } else {
+                                            Consola.escribir("Ha elegido una opcion no valida");
+                                        }
+                                        break;
+                                    case 3:
+                                        String novedad_pelicula = Consola.leer("Reportar una novedad sobre su pelicula");
+                                        Consola.escribir(
+                                                "Una persona se comunicara con ud para resolver la novedad (" + novedad_pelicula + ")");
+                                        break;
+                                    default:
+                                        Consola.escribir("Opción no válida");
+                                        break;
+                                }
+                        
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+
+                            public static void nombre_usuario() {
+                                String nombre = Consola.leer("Bienvenido a la video tienda el Porvenir, ingrese su nombre completo");
+                                Consola.escribir("Buen día señor(a) " + nombre + "por favor elija un opción");
+                                Consola.escribir("1. Ver peliculas disponibles");
+                                Consola.escribir("2. Entregar una pelicula");
+                                Consola.escribir("3. Reportar una novedad sobre su pelicula");
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 5</button>
+        <div class="panel">
+            <p>
+                La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder
+                facturar los productos que vende a sus clientes y para ello, los productos tienen unas características
+                que deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se
+                tienen las opciones de compra de producto, consulta de precios por producto y devoluciones en caso de
+                que se presenten.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                usuario.nombre_usuario();
+                                int opcion = Consola.leerEntero();
+                                switch (opcion) {
+                                    case 1:
+                                        Consola.escribir("Los productos disponibles son:");
+                                        Consola.escribir("1. Dolex 20mg");
+                                        Consola.escribir("2. Pastillas para el dolor de cabeza");
+                                        Consola.escribir("3. Jarabe para la tos");
+                                        Consola.escribir("Para comprar un producto reinicie el programa y escoja la opcion 2");
+                                        break;
+                                    case 2:
+                                        Consola.escribir("Elija el producto que quiere comprar de los disponibles:");
+                                        Consola.escribir("1. Dolex 20mg $800 c/u");
+                                        Consola.escribir("2. Pastillas para el dolor de cabeza $500 c/u");
+                                        Consola.escribir("3. Jarabe para la tos $12000 c/u");
+                                        int producto = Consola.leerEntero();
+                                        if (producto == 1) {
+                                            Consola.escribir("El producto que quiere comprar es Dolex 20mg");
+                                            Consola.escribir("¿Cuantos productos desea comprar?");
+                                            int cantidad = Consola.leerEntero();
+                                            Consola.escribir("El total a pagar es: $" + (cantidad * 800));
+                                        } else if (producto == 2) {
+                                            Consola.escribir("El producto que quiere comprar es Pastillas para el dolor de cabeza");
+                                            Consola.escribir("¿Cuantos productos desea comprar?");
+                                            int cantidad = Consola.leerEntero();
+                                            Consola.escribir("El total a pagar es: $" + (cantidad * 500));
+                                        } else if (producto == 3) {
+                                            Consola.escribir("El producto que quiere comprar es Jarabe para la tos");
+                                            Consola.escribir("¿Cuantos productos desea comprar?");
+                                            int cantidad = Consola.leerEntero();
+                                            Consola.escribir("El total a pagar es: $" + (cantidad * 12000));
+                                        } else {
+                                            Consola.escribir("El producto que quiere comprar no esta disponible");
+                                        }
+                                        break;
+                                    case 3:
+                                        String devolver_producto = Consola.leer("Por favor ingrese el nombre del producto que desea devolver");
+                                        Consola.escribir("El producto que desea devolver es: " + devolver_producto);
+                                        break;
+                                    default:
+                                        Consola.escribir("Opción no válida");
+                                        break;
+                                }
+                        
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+
+                            public static void nombre_usuario() {
+                                String nombre = Consola.leer("Bienvenido a la drogueria SUBA, ingrese su nombre completo");
+                                Consola.escribir("Buen día señor(a) " + nombre + "por favor elija un opción");
+                                Consola.escribir("1. Consultar productos disponibles");
+                                Consola.escribir("2. Comprar un producto");
+                                Consola.escribir("3. Hacer una devolución");
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+
+        <button class="menu-acordeon">Ejercicio 6</button>
+        <div class="panel">
+            <p>
+                El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas
+                revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes.
+                Para cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del
+                cliente. También debe existir registro de salida del taller con las novedades y otra de arreglos hechos
+                por el mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al
+                entregarla.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                usuario.nombre_usuario();
+                                int opcion = Consola.leerEntero("Ingrese una opción");
+                                switch (opcion) {
+                                    case 1:
+                                        Consola.escribir("Usted eligio ingreso para reparación");
+                                        String marca_moto = Consola.leer("Por favor ingrese la marca de su moto");
+                                        String placa_moto = Consola.leer("Por favor ingrese la placa de su moto");
+                                        String dano_moto = Consola.leer("Por favor ingrese el daño de su moto");
+                                        Consola.escribir("La marca de su moto es " + marca_moto + " y su placa es " + placa_moto
+                                                + " y entrara al taller por el daño " + dano_moto);
+                                        break;
+                                    case 2:
+                                        Consola.escribir("Usted eligio salida del taller");
+                                        String novedaes_mecanico = Consola
+                                                .leer("Describa las novedades del mecánico para el arreglo de la moto");
+                                        String repuesto = Consola
+                                                .leer("Describa los repuestos que le fue suministrado para el arreglo de la moto");
+                                        String inventario = Consola.leer(
+                                                "Desea agregar al inventario los repuestos suministrados responda si o no segun corresponda");
+                                        if (inventario == "si") {
+                                            Consola.escribir(
+                                                    "Su motocicleta esta lista para salida del taller, le agradecemos su atención, le informamos que su motocicleta tiene el siguiente arreglo: "
+                                                            + novedaes_mecanico + " y los repuestos suministrados son: " + repuesto
+                                                            + " y los repuestos fueron agregados al inventario");
+                                        } else {
+                                            Consola.escribir(
+                                                    "Su motocicleta esta lista para salida del taller, le agradecemos su atención, le informamos que su motocicleta tiene el siguiente arreglo: "
+                                                            + novedaes_mecanico + " y los repuestos suministrados son: " + repuesto
+                                                            + " y los repuestos no fueron agregados al inventario");
+                                        }
+                        
+                                        break;
+                                    default:
+                                        Consola.escribir("Opción inválida");
+                                        break;
+                                }
+                            }
+                        
+                        }           
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+
+                            public static void nombre_usuario() {
+                                String nombre = Consola.leer("Bienvenido al taller El Maquinista, por favor ingrese su nombre completo");
+                                Consola.escribir("Buen día señor(a) " + nombre + "por favor elija un opción");
+                                Consola.escribir("1. Ingreso para reparación");
+                                Consola.escribir("2. Salida del taller");
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 7</button>
+        <div class="panel">
+            <p>
+                La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de
+                masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada
+                adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango
+                se encuentra (bajo peso, normal, sobrepeso y obeso).
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                    usuario.nombre_usuario();
+                                    int peso = Consola.leerEntero("Ingrese su peso: ");
+                                    double estatura = Consola.leerDouble("Ingrese su estatura: ");
+                                    double imc = peso / (estatura * estatura);
+                                    if (imc < 18.5) {
+                                            Consola.escribir("Su imc es: " + imc + " y está en bajo peso");
+                                    } else if (imc >= 18.5 && imc <= 24.9) {
+                                            Consola.escribir("Su imc es: " + imc + " y está en peso normal");
+                                    } else if (imc >= 25 && imc <= 29.9) {
+                                            Consola.escribir("Su imc es: " + imc + " y está en sobrepeso");
+                                    } else if (imc >= 30 && imc <= 34.9) {
+                                            Consola.escribir("Su imc es: " + imc + " y está en obesidad grado 1");
+                                    } else if (imc >= 35 && imc <= 39.9) {
+                                            Consola.escribir("Su imc es: " + imc + " y está en obesidad grado 2");
+                                    } else {
+                                            Consola.escribir("Su imc es: " + imc + " y está en obesidad grado 3");
+                                    }
+                            }
+                    }
+                    
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+
+                            public static void nombre_usuario() {
+                                String nombre = Consola.leer("Bienvenido a la secretaria de salud, ¿Cómo te llamas? ");
+                                int cedula = Consola.leerEntero("Ingrese su cédula: ");
+                                Consola.escribir("Bienvenido " + nombre + " con cédula " + cedula);
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 8</button>
+        <div class="panel">
+            <p>
+                El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita
+                registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas
+                características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación
+                permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                    int ventas;
+                                    int vender = 0;
+                                    int total_ventas = 0;
+                    
+                                    do {
+                                            usuario.nombre_usuario();
+                                            ventas = usuario.pasteleria();
+                                            total_ventas = ventas + total_ventas;
+                                            vender = Consola.leerEntero("Desea vender otra torta? 1. Si 2. No");
+                                    } while (vender != 2);
+                    
+                                    Consola.escribir("El total de las ventas es de " + total_ventas + " pesos");
+                            }
+                    }
+                    
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+
+                            public static void nombre_usuario() {
+                                String nombre = Consola.leer("Bienvenido a la pasteleria por favor ingrese su nombre completo");
+                                Consola.escribir("Bienvenido " + nombre + " a la pasteleria");
+                            }
+                        
+                            public static int pasteleria() {
+                                int precio;
+                                Consola.escribir("Como desea su torta?");
+                                Consola.escribir("Los sabores disponibles son: ");
+                                Consola.escribir("1. Chocolate");
+                                Consola.escribir("2. Vainilla");
+                                Consola.escribir("3. Redvelvet");
+                                String torta = Consola.leer("Escriba el sabor que desea");
+                                Consola.escribir("Usted ha elegido la torta de " + torta);
+                                String relleno = Consola.leer("Que rellenos desea? Arequipe, crema de queso, chantilli");
+                                int porciones = Consola.leerEntero("De cuantas porciones desea su torta?");
+                                int decoracion = Consola.leerEntero("Desea decorara su torta su torta? 1. Si 2. No");
+                                if (decoracion == 1) {
+                                    precio = porciones * 5000 + 2000;
+                                    Consola.escribir("Su torta de chocolate con relleno de " + relleno + " y "
+                                            + porciones + " porciones tiene un precio de " + precio
+                                            + " pesos");
+                                } else {
+                                    precio = porciones * 5000;
+                                    Consola.escribir("Su torta de chocolate con relleno de " + relleno + " y "
+                                            + porciones + " porciones tiene un precio de " + precio
+                                            + " pesos");
+                                }
+                                return precio;
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 9</button>
+        <div class="panel">
+            <p>
+                El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de
+                diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio
+                solicitándole los valores al estudiante. La aplicación debe permitir que el estudiante seleccione si
+                desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios
+                para realizar cada cálculo y mostrar su respectivo resultado.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                    calcular.inicio();
+                                    int opcion = Consola.leerEntero();
+                                    switch (opcion) {
+                                            case 1:
+                                                    calcular.triangulo();
+                                                    break;
+                                            case 2:
+                                                    calcular.rectangulo();
+                                                    break;
+                                            case 3:
+                                                    calcular.trapecio();
+                                                    break;
+                                            default:
+                                                    Consola.escribir("Opcion no valida");
+                                                    break;
+                                    }
+                            }
+                    }
+                    </code>
+
+                </pre>
+                <p>Clase calcular</p>
+                <pre>
+                    <code class="language-java">
+                        public class calcular {
+
+                            public static void inicio() {
+                                Consola.escribir("Ingrese a que tipo de figura le desea calcular el area: ");
+                                Consola.escribir("1. Triangulo");
+                                Consola.escribir("2. Rectangulo");
+                                Consola.escribir("3. Trapecio");
+                        
+                            }
+                        
+                            public static void triangulo() {
+                                double base = Consola.leerDouble("Ingrese la base del triangulo: ");
+                                double altura = Consola.leerDouble("Ingrese la altura del triangulo: ");
+                                double area = (base * altura) / 2;
+                                Consola.escribir("El area del triangulo es: " + area);
+                            }
+                        
+                            public static void rectangulo() {
+                                double base = Consola.leerDouble("Ingrese la base del rectangulo: ");
+                                double altura = Consola.leerDouble("Ingrese la altura del rectangulo: ");
+                                double area = base * altura;
+                                Consola.escribir("El area del rectangulo es: " + area);
+                            }
+                        
+                            public static void trapecio() {
+                                double base1 = Consola.leerDouble("Ingrese la base del trapecio: ");
+                                double base2 = Consola.leerDouble("Ingrese la base del trapecio: ");
+                                double altura = Consola.leerDouble("Ingrese la altura del trapecio: ");
+                                double area = ((base1 + base2) * altura) / 2;
+                                Consola.escribir("El area del trapecio es: " + area);
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 10</button>
+        <div class="panel">
+            <p>
+                El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación
+                para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos
+                titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de
+                valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser
+                mayor al valor que tiene en la cuenta.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                    CuentaAhorro cuenta = new CuentaAhorro(0000, 0000, "nulo");
+                                    String nombre = Consola.leer("Bienvenido al banco fiel, ingrese su nombre completo");
+                                    Consola.escribir("Bienvenido " + nombre + " al banco fiel" + "a continuacion crearemos su cuenta");
+                                    nombre = cuenta.nombre;
+                                    int numero_cuenta = Consola.leerEntero("Ingrese el numero de cuenta");
+                                    cuenta.numero_cuenta = numero_cuenta;
+                                    int saldo = Consola.leerEntero("Ingrese el saldo");
+                                    cuenta.saldo = saldo;
+                                    Consola.escribir("Su cuenta de ahorro " + cuenta.numero_cuenta + " a nombre de " + cuenta.nombre
+                                                    + " ha sido creada");
+                                    int opcion = Consola.leerEntero("Ingrese una opcion: 1.Depositar 2.Retirar 3.Consultar saldo 4.Salir");
+                                    switch (opcion) {
+                                            case 1:
+                                                    int monto = Consola.leerEntero("Ingrese el monto a depositar");
+                                                    cuenta.depositar(monto);
+                                                    break;
+                                            case 2:
+                                                    int retiro = Consola.leerEntero("Ingrese el monto a retirar");
+                                                    cuenta.retirar(retiro);
+                                                    break;
+                                            case 3:
+                                                    cuenta.mostrar_saldo();
+                                                    break;
+                                            case 4:
+                                                    Consola.escribir("Gracias por utilizar nuestro banco fiel");
+                                                    break;
+                                            default:
+                                                    Consola.escribir("Opcion no valida");
+                                    }
+                            }
+                    }
+                    </code>
+                    
+                </pre>
+                <p>Clase CuentaAhorro</p>
+                <pre>
+                    <code class="language-java">
+                        public class CuentaAhorro {
+                            public int numero_cuenta = 0;
+                            public int saldo = 0;
+                            public String nombre = "";
+                        
+                            public CuentaAhorro(int NumeroCuenta, int valor, String cliente) {
+                                numero_cuenta = NumeroCuenta;
+                                saldo = valor;
+                                nombre = cliente;
+                            }
+                        
+                            public int getNumeroCuenta() {
+                                return numero_cuenta;
+                            }
+                        
+                            public void depositar(int monto) {
+                                if (monto > 0) {
+                                    saldo += monto;
+                                    Consola.escribir("Su deposito de " + monto + " ha sido realizado y su saldo es de " + saldo);
+                                } else {
+                                    Consola.escribir("El monto a depositar debe ser mayor a 0");
+                                }
+                            }
+                        
+                            public void retirar(int monto) {
+                                if (monto > 0) {
+                                    if (monto <= saldo) {
+                                        saldo -= monto;
+                                        Consola.escribir("Su retiro de " + monto + " ha sido realizado");
+                                    } else {
+                                        Consola.escribir("El monto a retirar debe ser menor o igual al saldo");
+                                    }
+                                } else {
+                                    Consola.escribir("El monto a retirar debe ser mayor a 0");
+                                }
+                            }
+                        
+                            public void mostrar_saldo() {
+                                Consola.escribir("Su saldo es: " + saldo);
+                            }
+                        
+                            public void consultar_saldo() {
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+
+    </div>
+    <div class="contenedor_botones">
+        <a href="/3. portafolio/java/java.html" class="boton_final">
+            <span>Página principal</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

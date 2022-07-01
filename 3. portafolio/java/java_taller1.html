@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller 1 java</title>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller 1 java</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 1</button>
+        <div class="panel">
+            <p>Realizar un programa el cual solicite su nombre y apellidos.</p> <br>
+            <p>Clase principal</p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        package com.sofka;
+
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                nombre_apellido.nombre();
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase nombre_apellido</p>
+                <pre>
+                    <code class="language-java">
+                        import java.util.Scanner;
+
+                        public class nombre_apellido {
+                            public static String nombre;
+                        
+                            public static void nombre() {
+                                try (Scanner sc = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su nombre: ");
+                                    String nombre = sc.nextLine();
+                                    System.out.println("Ingrese su apellido: ");
+                                    String apellido = sc.nextLine();
+                                    System.out.println("Su nombre es: " + nombre + " " + "Su apellido es: " + apellido);
+                        
+                                }
+                        
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 2</button>
+        <div class="panel">
+            <p>
+                Realizar un programa el cual solicite su nombre, apellidos, edad y
+                estatura.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) throws Exception {
+                                usuario.usuario_info();
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        import java.util.Scanner;
+
+                        public class usuario {
+                            public static String nombre, apellido;
+                            public static int edad;
+                            public static float estatura;
+                        
+                            public static void usuario_info() {
+                                try (Scanner input = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su nombre: ");
+                                    nombre = input.nextLine();
+                                    System.out.println("Ingrese su apellido: ");
+                                    apellido = input.nextLine();
+                                    System.out.println("Ingrese su edad: ");
+                                    edad = input.nextInt();
+                                    System.out.println("Ingrese su estatura: ");
+                                    estatura = input.nextFloat();
+                                    System.out.print("Su nombre es: " + nombre + " " + apellido + " Y su edad es: " + edad
+                                            + " Y su estatura es: " + estatura + "m");
+                                }
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 3</button>
+        <div class="panel">
+            <p>
+                Realizar un programa el cual solicite su nombre y apellidos, también
+                debe capturar nombre y apellidos de su padre y madre. Al finalizar
+                debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo],
+                soy hijo de [Nombre de la Madre] y [Nombre del Padre].
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) throws Exception {
+                                usuario.usuario_info();
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class usuario {
+                            public static String nombre, apellido;
+                        
+                            public static void usuario_info() {
+                                try (Scanner input = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su nombre: ");
+                                    nombre = input.nextLine();
+                                    System.out.println("Ingrese su apellido: ");
+                                    apellido = input.nextLine();
+                                    System.out.println(" Ingrese el nombre de su madre: ");
+                                    String madre = input.nextLine();
+                                    System.out.println(" Ingrese el apellido de su madre: ");
+                                    String madre_apellido = input.nextLine();
+                                    System.out.println(" Ingrese el nombre de su padre: ");
+                                    String padre = input.nextLine();
+                                    System.out.println(" Ingrese el apellido de su padre: ");
+                                    String padre_apellido = input.nextLine();
+                        
+                                    System.out.print("Yo: " + nombre + " " + apellido + " " + ", soy hijo de " + padre + " " + padre_apellido
+                                            + " y de " + madre + " " + madre_apellido);
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 4</button>
+        <div class="panel">
+            <p>
+                Realizar un programa el cual solicite el nombre de una ciudad capital
+                y el país. Al finalizar debe imprimir en pantalla el siguiente mensaje
+                "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del
+                País]
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) throws Exception {
+                                usuario.usuario_info();
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        import java.util.Scanner;
+
+                        public class usuario {
+                            public static String pais, capital;
+                        
+                            public static void usuario_info() {
+                                try (Scanner input = new Scanner(System.in)) {
+                                    System.out.println("Ingrese el nombre de la ciudad: ");
+                                    capital = input.nextLine();
+                                    System.out.println("Ingrese el nombre del país: ");
+                                    pais = input.nextLine();
+                        
+                                    System.out.print(capital + " es la capital de " + pais + ". ");
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 5</button>
+        <div class="panel">
+            <p>
+                Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y
+                su nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de
+                Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre
+                Completo] es actualmente su dueño(a).
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) throws Exception {
+                                usuario.usuario_info();
+                            }
+                        }                     
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        import java.util.Scanner;
+
+                        public class usuario {
+                            public static String nombre_mascota, tipo_mascota, nombre_usuario;
+                            public static int edad_mascota;
+                        
+                            public static void usuario_info() {
+                                try (Scanner input = new Scanner(System.in)) {
+                                    System.out.println("Ingrese su nombre: ");
+                                    nombre_usuario = input.nextLine();
+                                    System.out.println("Ingrese el nombre de la mascota: ");
+                                    nombre_mascota = input.nextLine();
+                                    System.out.println("Ingrese el tipo de mascota: ");
+                                    tipo_mascota = input.nextLine();
+                                    System.out.println("Ingrese la edad de la mascota: ");
+                                    edad_mascota = input.nextInt();
+                        
+                                    System.out.print(nombre_mascota + " es un " + tipo_mascota + ", el cual, tiene " + edad_mascota
+                                            + " años de edad y " + nombre_usuario + " es su dueño.");
+                                }
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor_botones">
+        <a href="/3. portafolio/java/java.html" class="boton_final">
+            <span>Página principal</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

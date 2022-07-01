@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller ciclos</title>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller de ciclos hecho con funciones PSeInt</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 6</button>
+        <div class="panel">
+            <p>
+                Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos
+                telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y
+                organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté
+                almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el
+                sistema debe terminar cuando el usuario así lo indique.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_ciclos_6
+                        Definir nombre, organizacion Como Caracter;
+                        Dimension nombre[3], organizacion[3];
+                        Definir telefono,opcion,opcion_contactos, contador, opcion_eliminar, inicio,x Como Entero;
+                        Dimension telefono[3];
+                        contador <- 0;
+                        para x <- 0 Hasta 2 Con Paso 1 Hacer
+                            nombre[x] <- 'No existe';
+                            telefono[x] <- 0;
+                            organizacion[x] <- 'No existe';
+                            
+                        FinPara
+                        
+                        Repetir
+                            
+                            Escribir '1. Crear nuevo contacto';
+                            Escribir '2. Buscar contactos ';
+                            Escribir '3. Eliminar contactos';
+                            Escribir '4. Salir';
+                            leer opcion;
+                            Segun opcion Hacer
+                                1:
+                                    Escribir 'Solo podra guardar 3 contactos';
+                                    Si contador < 3  Entonces
+                                        nombre[contador] <- escribirnombre ('Ingrese el nombre de contacto');
+                                        telefono[contador] <- escribirtelefono('Ingrese el numero de telefono');
+                                        organizacion[contador] <- escribirnombre('Ingrese el nombre de la organizacion');
+                                    SiNo
+                                        Escribir 'Agenda llena';
+                                    FinSi
+                                    contador <- contador +1;
+                                    Escribir  contador;
+                                2:
+                                    lectorAgenda(contador,nombre,telefono,organizacion);
+                                3:
+                                    Escribir 'Ingrese el numero del contacto que desea eliminar';
+                                    Leer opcion_eliminar;
+                                    Eliminarcarac(opcion_eliminar,nombre);
+                                    Eliminarcarac(opcion_eliminar,organizacion);
+                                    Eliminarnum(opcion_eliminar,telefono);
+                            FinSegun
+                        Hasta Que opcion=4;
+                        
+                    FinProceso 
+                    
+                    SubProceso nombre <- escribirnombre(mensaje)
+                        Definir nombre Como Caracter;
+                        Escribir mensaje;
+                        Leer nombre;
+                    FinSubProceso
+                    
+                    SubProceso nombre <- escribirtelefono(mensaje)
+                        Definir nombre Como entero;
+                        Escribir mensaje;
+                        Leer nombre;
+                    FinSubProceso
+                    
+                    SubProceso lectorAgenda(variable1,variable2,variable3,variable4)
+                        Definir a Como Entero;
+                        a <- 0;
+                        Para a<-0 Hasta 2 Con Paso 1 Hacer
+                            Escribir variable2[a]; 
+                            Escribir variable3[a];
+                            Escribir variable4[a];
+                        FinPara
+                        
+                    FinSubProceso
+                    
+                    SubProceso Eliminarcarac(variable1,variable2)
+                        
+                        variable2[variable1] <- 'Inexistente';
+                        
+                    FinSubProceso
+                    
+                    SubProceso Eliminarnum(variable1,variable2)
+                        
+                        variable2[variable1] <- 0;
+                        
+                    FinSubProceso
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 7</button>
+        <div class="panel">
+            <p>
+                El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y
+                requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se
+                sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del
+                cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de
+                ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el
+                parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente
+                que el parqueadero solo puede almacenar máximo 5 vehículos.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_ciclos_7
+	
+                        Definir nombre, marca, placa Como Caracter;
+                        Dimension nombre[5], placa[5], marca[5];
+                        Definir telefono,opcion,opcion_contactos, contador, opcion_eliminar, inicio,x Como Entero;
+                        Dimension telefono[5];
+                        contador <- 0;
+                        para x <- 0 Hasta 4 Con Paso 1 Hacer
+                            nombre[x] <- 'No existe';
+                            telefono[x] <- 0;
+                            placa[x] <- 'No existe';
+                            marca[x] <- 'No existe';
+                        FinPara
+                        
+                        Repetir
+                            Escribir 'Bienvenido a El Guardian, seleccione alguna de las opciones a continuacion';
+                            Escribir '1. Ingresar datos de vehiculos';
+                            Escribir '2. consulta de vehiculo';
+                            Escribir '3. Retiro de vehiculo';
+                            Escribir '4. Salir';
+                            leer opcion;
+                            Segun opcion Hacer
+                                1:
+                                    Escribir 'ingrese los datos de su vehiculo';
+                                    Si contador < 5  Entonces
+                                        nombre[contador] <- escribirnombre ('Ingrese el nombre de contacto');
+                                        telefono[contador] <- escribirtelefono('Ingrese el numero de telefono');
+                                        placa[contador] <- escribirnombre('Ingrese la placa');
+                                        marca[contador] <- escribirnombre('Ingrese la marca');
+                                    SiNo
+                                        Escribir 'Garage lleno';
+                                    FinSi
+                                    contador <- contador +1;
+                                    Escribir  contador;
+                                2:
+                                    lectorgarage(contador,nombre,telefono,placa,marca);
+                                3:
+                                    Escribir 'Ingrese el numero del vehiculo que desea eliminar';
+                                    Leer opcion_eliminar;
+                                    Si (opcion_eliminar > 0) Y (opcion_eliminar < 6) Entonces
+                                        Eliminarcarac(opcion_eliminar,nombre);
+                                        Eliminarcarac(opcion_eliminar,marca);
+                                        Eliminarcarac(opcion_eliminar,placa);
+                                        Eliminarnum(opcion_eliminar,telefono);
+                                    SiNo
+                                        Escribir 'Error opcion incorrecta';
+                                    FinSi
+                            FinSegun
+                        Hasta Que opcion=4;
+                        
+                    FinProceso 
+                    
+                    SubProceso nombre <- escribirnombre(mensaje)
+                        Definir nombre Como Caracter;
+                        Escribir mensaje;
+                        Leer nombre;
+                    FinSubProceso
+                    
+                    SubProceso nombre <- escribirtelefono(mensaje)
+                        Definir nombre Como entero;
+                        Escribir mensaje;
+                        Leer nombre;
+                    FinSubProceso
+                    
+                    SubProceso lectorgarage(variable1,variable2,variable3,variable4,variable5)
+                        Definir a Como Entero;
+                        a <- 0;
+                        Para a<-0 Hasta 4 Con Paso 1 Hacer
+                            Escribir a+1,'.Nombre: ', variable2[a],' Telefono: ',variable3[a],' Placa: ', variable4[a],' Marca: ',variable5[a];
+                        FinPara
+                        
+                    FinSubProceso
+                    
+                    SubProceso Eliminarcarac(variable1,variable2)
+                        
+                        variable2[variable1-1] <- 'Inexistente';
+                        
+                    FinSubProceso
+                    
+                    SubProceso Eliminarnum(variable1,variable2)
+                        
+                        variable2[variable1-1] <- 0;
+                        
+                    FinSubProceso
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 8</button>
+        <div class="panel">
+            <p>
+                La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en
+                los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el
+                trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso
+                al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si
+                fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga
+                presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_ciclos_8
+                        Definir nombre, aprobo, curso Como Caracter;
+                        Dimension nombre[8], aprobo[8], curso[8];
+                        Definir opcion,opcion_contactos, contador, opcion_eliminar, inicio,x Como Entero;
+                        contador <- 0;
+                        para x <- 0 Hasta 7 Con Paso 1 Hacer
+                            nombre[x] <- 'No existe';
+                            aprobo[x] <- 'No info';
+                            curso[x] <- 'No info';
+                        FinPara
+                        
+                        Repetir
+                            Escribir 'Bienvenido a El Guardian, seleccione alguna de las opciones a continuacion';
+                            Escribir 'Escuela automovilistica el Maestro, por favor seleccione una opciòn';
+                            Escribir '1. Ingresar nuevo usuario';
+                            Escribir '2. Consultar usuario y resultados del curso';
+                            Escribir '3. Salir';
+                            leer opcion;
+                            Segun opcion Hacer
+                                1:
+                                    Escribir 'ingrese los datos del usuario';
+                                    Si contador < 8  Entonces
+                                        nombre[contador] <- escribirnombre ('Ingrese el nombre de contacto');
+                                        curso[contador] <- escribirnombre('Ingrese si realizo el curso o no');
+                                        aprobo[contador] <- escribirnombre('Ingrese si aprobo el curso o no');
+                                    SiNo
+                                        Escribir 'Maximo de usuario completado';
+                                    FinSi
+                                    contador <- contador +1;
+                                    Escribir  contador;
+                                2:
+                                    lectorusuarios(contador,nombre,curso,aprobo);
+                                De Otro Modo:
+                                    
+                            FinSegun
+                        Hasta Que opcion=3;
+                        
+                FinProceso 
+                
+                SubProceso nombre <- escribirnombre(mensaje)
+                    Definir nombre Como Caracter;
+                    Escribir mensaje;
+                    Leer nombre;
+                FinSubProceso
+                
+                SubProceso nombre <- escribirtelefono(mensaje)
+                    Definir nombre Como entero;
+                    Escribir mensaje;
+                    Leer nombre;
+                FinSubProceso
+                
+                SubProceso lectorusuarios(variable1,variable2,variable3,variable4)
+                    Definir a Como Entero;
+                    a <- 0;
+                    Para a<-0 Hasta 7 Con Paso 1 Hacer
+                        Escribir a+1,'.Nombre: ', variable2[a],' Curso: ',variable3[a],' Aprobo: ', variable4[a];
+                    FinPara
+                    
+                FinSubProceso
+                
+                SubProceso Eliminarcarac(variable1,variable2)
+                    
+                    variable2[variable1-1] <- 'Inexistente';
+                    
+                FinSubProceso
+                
+                SubProceso Eliminarnum(variable1,variable2)
+                    
+                    variable2[variable1-1] <- 0;
+                    
+                FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor_botones">
+        <a href="pseint_taller5.html" class="boton_final">
+            <span>volver Taller 5</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

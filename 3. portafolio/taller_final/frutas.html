@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="root">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_frutas.css">
-    <script async src="script.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_frutas.css">
+    <script async src="/3. portafolio/javascript/frutas_script.js"></script>
     <title>caja de frutas</title>
 </head>
-<body>
+
+<body onload="main()">
     <div class="caja_frutas">
         <ol>
             <li class="impar">manzana</li>
@@ -29,5 +31,13 @@
             <option class="impares" value="2">impares</option>
         </select>
     </div>
+    <div class="contenedor_botones">
+        <a href="/3. portafolio/portafolio.html" class="boton_final">
+            <span>Página principal</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
 </body>
+
 </html>

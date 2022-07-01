@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taller 1 PSeInt</title>
+  <script async src="/3. portafolio/javascript/paginas.js"></script>
+  <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+  <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+  <h1>Taller 1 PSeInt</h1>
+  <div class="seccion">
+    <button class="menu-acordeon">Ejercicio 1</button>
+    <div class="panel">
+      <p>Realizar un programa el cual solicite su nombre y apellidos.</p>
+      <div class="codigo">
+        <pre>
+                    <code class="language-markup">
+                    Proceso taller_1_psint
+                        Definir nombre, apellidos Como Caracter;
+                        Escribir 'Escriba su nombre a continuación'
+                        Leer nombre;
+                        Escribir 'Escriba su apellido a continuación';
+                        Leer apellidos;
+                        Escribir 'Hola soy ', nombre, ' ',apellidos;
+                    FinProceso;
+
+                    </code>
+                </pre>
+      </div>
+    </div>
+    <button class="menu-acordeon">Ejercicio 2</button>
+    <div class="panel">
+      <p>
+        Realizar un programa el cual solicite su nombre, apellidos, edad y
+        estatura.
+      </p>
+      <div class="codigo">
+        <pre>
+              <code class="language-markup">
+                Proceso taller_ejercicio2_psint
+                  Definir nombre, apellidos Como Caracter;
+                  Escribir 'Escriba su nombre a continuación';
+                  Leer nombre;
+                  Escribir 'Escriba su apellido a continuación';
+                  Leer apellidos;
+                  Escribir 'Hola soy ', nombre, ' ',apellidos;
+                  Definir edad Como Entero;
+                  Definir estatura Como Real;
+                  Escribir 'Escriba su edad a continuación';
+                  Leer edad;
+                  Escribir 'Escriba su estatura a continuación';
+                  Leer estatura;
+                  Escribir 'Mi edad es ', edad,' y mi estatura es ', estatura; 
+              FinProceso
+              </code>
+          </pre>
+      </div>
+    </div>
+    <button class="menu-acordeon">Ejercicio 3</button>
+    <div class="panel">
+      <p>
+        Realizar un programa el cual solicite su nombre y apellidos, también
+        debe capturar nombre y apellidos de su padre y madre. Al finalizar
+        debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo],
+        soy hijo de [Nombre de la Madre] y [Nombre del Padre].
+      </p>
+      <div class="codigo">
+        <pre>
+              <code class="language-markup">
+                Proceso taller_1_psint
+                    Definir nombre, apellidos, padre_nombre, padre_apellido, madre_nombre, madre_apellido Como Caracter;
+                    Escribir 'Escriba su nombre a continuación';
+                    Leer nombre;
+                    Escribir 'Escriba su apellido a continuación';
+                    Leer apellidos;
+                    Escribir 'Escriba el nombre de su padre a continuación';
+                    Leer padre_nombre;
+                    Escribir 'Escriba el apellido de su padre a continuación';
+                    Leer padre_apellido;
+                    Escribir 'Escriba el nombre de su madre a continuación';
+                    Leer madre_nombre;
+                    Escribir 'Escriba el apellido de su madre a continuación';
+                    Leer madre_apellido;
+                    Escribir 'Hola soy ', nombre, ' ',apellidos,', soy hijo de ',padre_nombre, ' ',padre_apellido,' y ',madre_nombre,' ',madre_apellido; 
+                FinProceso
+              </code>
+          </pre>
+      </div>
+    </div>
+    <button class="menu-acordeon">Ejercicio 4</button>
+    <div class="panel">
+      <p>
+        Realizar un programa el cual solicite el nombre de una ciudad capital
+        y el país. Al finalizar debe imprimir en pantalla el siguiente mensaje
+        "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del
+        País]
+      </p>
+      <div class="codigo">
+        <pre>
+              <code class="language-markup">
+                Proceso taller_1_psint
+                  Definir capital,pais Como Caracter;
+                  Escribir 'Escriba la capital a continuación';
+                  Leer capital;
+                  Escribir 'Escriba el país a continuación';
+                  Leer pais;
+                  Escribir 'La ciudad ', capital,', Es la capital de ' ,pais;
+                FinProceso
+              </code>
+          </pre>
+      </div>
+    </div>
+    <button class="menu-acordeon">Ejercicio 5</button>
+    <div class="panel">
+      <p>
+        Realizar un programa el cual solicite el nombre de su mascota, edad de
+        la mascota, el tipo de mascota y su nombre completo. Al finalizar el
+        sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de
+        Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la
+        Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).
+      </p>
+      <div class="codigo">
+        <pre>
+            <code class="language-markup">
+                Proceso taller_1_psint
+                  Definir nombre_mascota, tipo_mascota, dueno_nombre, dueno_apellido Como Caracter;
+                  Definir edad_mascota Como Entero;
+                  Escribir 'Escriba su nombre a continuación';
+                  Leer dueno_nombre;
+                  Escribir 'Escriba su apellido a continuación';
+                  Leer dueno_apellido;
+                  Escribir 'Escriba el nombre de su mascota a continuación';
+                  Leer nombre_mascota;
+                  Escribir 'Escriba el tipo de mascota a continuación';
+                  Leer tipo_mascota;
+                  Escribir 'Escriba la edad de su mascota a continuación';
+                  Leer edad_mascota;
+                  Escribir nombre_mascota, ' es un(a) ', tipo_mascota, ', el cual, tiene ', edad_mascota, ' años de edad y ',dueno_nombre,' ', dueno_apellido,' es actualmente su dueño(a)' ;
+                FinProceso
+            </code>
+          </pre>
+      </div>
+    </div>
+    <button class="menu-acordeon">Video</button>
+    <div class="panel">
+      <p>
+        <iframe width="800" height="600" src="https://www.youtube.com/embed/avZKLU3dxy0" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </p>
+    </div>
+  </div>
+  <div class="contenedor_botones">
+    <a href="pseint.html" class="boton_final">
+      <span>Página principal</span>
+      <svg>
+        <rect x="0" y="0" fill="none"></rect>
+      </svg></a>
+  </div>
+  <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

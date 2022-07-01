@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller 3 java</title>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller 3 java</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 1</button>
+        <div class="panel">
+            <p>
+                Realizar la siguiente figura por medio del <strong>ciclo Para</strong>
+
+            </p>
+            <br>
+            <img src="/3. portafolio/img/asteriscos_1.jpg" alt="">
+            <br>
+            <p>Clase principal</p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                int control = 10;
+                                for(int i = 0; i < control; i++) {
+                                    for (int j = 0; j < i; j++) {
+                                        Consola.escribirSinSaltar("*");
+                                    }
+                                    Consola.escribir("");
+                                }
+                        
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 2</button>
+        <div class="panel">
+            <p>
+                Realizar la siguiente figura por medio del ciclo <strong>Mientras - Hacer</strong>
+            </p>
+            <br>
+            <img src="/3. portafolio/img/asteriscos_2.jpg" alt="">
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                int control_1 = 10;
+                                int control_2 = 1;
+                                int control_3 = 1;
+                                while (control_3 <= 10) {
+                                    while (control_1 >= control_3) {
+                                        Consola.escribirSinSaltar(" ");
+                                        control_1 = control_1 - 1;
+                                    }
+                                    while (control_2 <= control_3) {
+                                        Consola.escribirSinSaltar("*");
+                                        control_2 = control_2 + 1;
+                                    }
+                                    Consola.escribir("");
+                                    control_3 = control_3 + 1;
+                                    control_1 = 10;
+                                    control_2 = 1;
+                                }
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 3</button>
+        <div class="panel">
+            <p>
+                Realizar la siguiente figura por medio del ciclo <strong>Repetir - Hasta Que</strong>
+            </p>
+            <br>
+            <img src="/3. portafolio/img/asteriscos_3.jpg" alt="">
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                ArbolNavidad.ParteArriba();
+                                ArbolNavidad.Tallo();
+                                ArbolNavidad.ParteFinal();
+                        
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase ArbolNavidad</p>
+                <pre>
+                    <code class="language-java">
+                        public class ArbolNavidad {
+
+                            public static void ParteArriba() {
+                                int i, j, k, n;
+                                n = 8;
+                                i = 1;
+                                j = n + (n / 2);
+                                k = 1;
+                                do {
+                                    do {
+                                        Consola.escribirSinSaltar(" ");
+                                        j--;
+                        
+                                    } while (j > i);
+                        
+                                    do {
+                                        Consola.escribirSinSaltar("*");
+                                        k++;
+                                    } while (k <= 2 * i - 1);
+                                    i++;
+                                    k = 1;
+                                    j = n + (n / 2);
+                                    Consola.escribir("");
+                                } while (i < n + (n / 2));
+                            }
+                        
+                            public static void Tallo() {
+                                int i, j, k, n;
+                                n = 8;
+                                i = 2;
+                                j = n + (n / 2);
+                                k = n / 2;
+                                do {
+                                    do {
+                                        Consola.escribirSinSaltar(" ");
+                                        j--;
+                        
+                                    } while (j > 2);
+                        
+                                    do {
+                                        Consola.escribirSinSaltar("*");
+                                        k++;
+                                    } while (k <= (n / 2) + 2);
+                                    i++;
+                                    j = n + (n / 2);
+                                    k = n / 2;
+                                    Consola.escribir("");
+                                } while (i < n - (n / 2));
+                        
+                            }
+                        
+                            public static void ParteFinal() {
+                                int j, k, n;
+                                n = 8;
+                                j = n + (n / 2);
+                                k = n / 2;
+                                do {
+                                    Consola.escribirSinSaltar(" ");
+                                    j--;
+                                } while (j > 3);
+                                do {
+                                    Consola.escribirSinSaltar("*");
+                                    k++;
+                                } while (k <= (n / 2) + 4);
+                                Consola.escribir("");
+                                j = n + (n / 2);
+                                k = n / 2;
+                                do {
+                                    Consola.escribirSinSaltar(" ");
+                                    j--;
+                                } while (j > 4);
+                                do {
+                                    Consola.escribirSinSaltar("*");
+                                    k++;
+                                } while (k <= (n / 2) + 6);
+                        
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 4</button>
+        <div class="panel">
+            <p>
+                Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por
+                medio del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear
+                la tabla del 5, entonces el resultado debería ser el siguiente:
+            </p>
+            <br>
+            <img src="/3. portafolio/img/multiplicar_1.jpg" alt="">
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                int entrada = Consola.leerEntero("Por favor ingrese el numero del que desea saber la tabla de multiplicar: ");
+                        
+                                for (int i = 1; i <= 10; i++) {
+                                    Consola.escribir(entrada + " X " + i + " = " + (entrada * i));
+                                }
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 5</button>
+        <div class="panel">
+            <p>
+                Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee
+                terminar dicho ciclo.
+            </p>
+            <br>
+            <img src="/3. portafolio/img/menu_inf.jpg" alt="">
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                int opcion = 0;
+                                do {
+                                    Consola.escribir("Menu principal");
+                                    Consola.escribir("1. Capturar nombre");
+                                    Consola.escribir("2. Saludar");
+                                    Consola.escribir("3. Salir");
+                                    opcion = Consola.leerEntero("Por favor escoja una opcion: ");
+                                    switch (opcion) {
+                                        case 1:
+                                            Usuario.setNombre();
+                                            break;
+                                        case 2:
+                                            Consola.escribir("Hola " + Usuario.nombre);
+                                            break;
+                                        case 3:
+                                            Consola.escribir("Gracias por usar nuestra aplicacion");
+                                            break;
+                                        default:
+                                            Consola.escribir("Opcion no valida");
+                                            break;
+                                    }
+                        
+                                } while (opcion != 3);
+                        
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class Usuario {
+                            public static String nombre;
+                        
+                            public static void setNombre() {
+                                nombre = Consola.leer("Por favor ingrese su nombre: ");
+                        
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+
+        <button class="menu-acordeon">Ejercicio 6</button>
+        <div class="panel">
+            <p>
+                Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos
+                telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y
+                organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté
+                almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el
+                sistema debe terminar cuando el usuario así lo indique.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                                Boolean salir = false;
+                                int opcion;
+                                Agenda agendaTelefono = new Agenda();
+                                Contacto a;
+                                String nombre, organizacion;
+                                int telefono;
+                        
+                                while (!salir) {
+                                    Consola.escribir("1. Agregar contacto");
+                                    Consola.escribir("2. Buscar contacto por nombre");
+                                    Consola.escribir("3. Buscar contacto por numero");
+                                    Consola.escribir("4. Eliminar contacto");
+                                    Consola.escribir("5. Salir");
+                                    opcion = Consola.leerEntero("Ingrese una opcion: ");
+                        
+                                    switch (opcion) {
+                                        case 1:
+                                            nombre = Consola.leer("Ingrese el nombre del contacto: ");
+                                            organizacion = Consola.leer("Ingrese la organizacion del contacto: ");
+                                            telefono = Consola.leerEntero("Ingrese el telefono del contacto: ");
+                                            a = new Contacto(nombre, organizacion, telefono);
+                                            agendaTelefono.agregarContacto(a);
+                                            break;
+                                        case 2:
+                                            nombre = Consola.leer("Ingrese el nombre del contacto: ");
+                                            agendaTelefono.BuscarContactoNombre(nombre);
+                                            break;
+                                        case 3:
+                                            telefono = Consola.leerEntero("Ingrese el telefono del contacto: ");
+                                            agendaTelefono.BuscarContactoTelefono(telefono);
+                                            break;
+                                        case 4:
+                                            nombre = Consola.leer("Ingrese el nombre del contacto: ");
+                                            agendaTelefono.EliminarContacto(nombre);
+                                            break;
+                                        case 5:
+                                            salir = true;
+                                            break;
+                                        default:
+                                            Consola.escribir("Opcion incorrecta");
+                                            break;
+                                    }
+                                }
+                        
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase Contacto</p>
+                <pre>
+                    <code class="language-java">
+                        public class Contacto {
+                            private String nombre;
+                            private String organizacion;
+                            private int telefono;
+                        
+                            public Contacto(String nombre, String organizacion, int telefono) {
+                                this.nombre = nombre;
+                                this.organizacion = organizacion;
+                                this.telefono = telefono;
+                            }
+                        
+                            public String getNombre() {
+                                return nombre;
+                            }
+                        
+                            public void setNombre(String nombre) {
+                                this.nombre = nombre;
+                            }
+                        
+                            public String getOrganizacion() {
+                                return organizacion;
+                            }
+                        
+                            public void setOrganizacion(String organizacion) {
+                                this.organizacion = organizacion;
+                            }
+                        
+                            public int getTelefono() {
+                                return telefono;
+                            }
+                        
+                            public void setTelefono(int telefono) {
+                                this.telefono = telefono;
+                            }
+                        
+                            public boolean equals(Contacto a) {
+                                if (this.telefono == a.telefono) {
+                                    return true;
+                                }
+                                return false;
+                        
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase Agenda</p>
+                <pre>
+                    <code class="language-java">
+                        public class Agenda {
+
+                            private Contacto[] contactos;
+                        
+                            public Agenda() {
+                                contactos = new Contacto[3];
+                            }
+                        
+                            public void agregarContacto(Contacto a) {
+                        
+                                if (ExisteContacto(a)) {
+                                    Consola.escribir("El contacto ya existe, con este numero o nombre");
+                                } else {
+                                    Boolean EsIgual = false;
+                                    for (int i = 0; i < contactos.length && !EsIgual; i++) {
+                                        if (contactos[i] == null) {
+                                            contactos[i] = a;
+                                            EsIgual = true;
+                                        }
+                                    }
+                                    if (EsIgual) {
+                                        Consola.escribir("Contacto agregado");
+                                    } else {
+                                        Consola.escribir("No existe espacio para otro contacto");
+                                    }
+                        
+                                }
+                            }
+                        
+                            public Boolean ExisteContacto(Contacto a) {
+                                Boolean Existe = false;
+                                for (int i = 0; i < contactos.length && !Existe; i++) {
+                                    if (contactos[i] != null) {
+                                        if (contactos[i].equals(a)) {
+                                            Existe = true;
+                                        }
+                                    }
+                                }
+                                return Existe;
+                            }
+                        
+                            public void BuscarContactoNombre(String nombre) {
+                                Boolean ContactoEncontrado = false;
+                                for (int i = 0; i < contactos.length && !ContactoEncontrado; i++) {
+                                    if (contactos[i] != null) {
+                                        if (contactos[i].getNombre().equalsIgnoreCase(nombre)) {
+                                            Consola.escribir("El contacto con nombre " + nombre + " es " + contactos[i].getNombre()
+                                                    + " de la organizacion " + contactos[i].getOrganizacion() + " y el telefono "
+                                                    + contactos[i].getTelefono());
+                                            ContactoEncontrado = true;
+                                        }
+                                    }
+                                }
+                                if (!ContactoEncontrado) {
+                                    Consola.escribir("No existe un contacto con el nombre " + nombre);
+                                }
+                            }
+                        
+                            public void BuscarContactoTelefono(int telefono) {
+                                Boolean ContactoEncontrado = false;
+                                for (int i = 0; i < contactos.length && !ContactoEncontrado; i++) {
+                                    if (contactos[i] != null) {
+                                        if (contactos[i].getTelefono() == telefono) {
+                                            Consola.escribir("El contacto con telefono " + telefono + " es " + contactos[i].getNombre()
+                                                    + " de la organizacion " + contactos[i].getOrganizacion() + " y el telefono "
+                                                    + contactos[i].getTelefono());
+                                            ContactoEncontrado = true;
+                                        }
+                                    }
+                                }
+                                if (!ContactoEncontrado) {
+                                    Consola.escribir("No existe un contacto con el telefono " + telefono);
+                                }
+                            }
+                        
+                            public void EliminarContacto(String nombre) {
+                                Boolean eliminado = false;
+                                for (int i = 0; i < contactos.length && !eliminado; i++) {
+                                    if (contactos[i] != null) {
+                                        if (contactos[i].getNombre().equalsIgnoreCase(nombre)) {
+                                            contactos[i] = null;
+                                            Consola.escribir("Contacto eliminado");
+                                            eliminado = true;
+                                        }
+                                    }
+                                }
+                                if (!eliminado) {
+                                    Consola.escribir("No existe un contacto con el nombre " + nombre);
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 7</button>
+        <div class="panel">
+            <p>
+                El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y
+                requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se
+                sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del
+                cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de
+                ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el
+                parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente
+                que el parqueadero solo puede almacenar máximo 5 vehículos.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                Boolean salir = false;
+                                int opcion;
+                                Taller vehiculosTaller = new Taller();
+                                Usuario a;
+                                String nombre, marca, placa;
+                                int telefono;
+                        
+                                while (!salir) {
+                                    Consola.escribir("1. Agregar vehiculo");
+                                    Consola.escribir("2. Buscar vehiculo por nombre de usuario");
+                                    Consola.escribir("3. Buscar vehiculo por placa");
+                                    Consola.escribir("4. Eliminar contacto");
+                                    Consola.escribir("5. Salir");
+                                    opcion = Consola.leerEntero("Ingrese una opcion: ");
+                        
+                                    switch (opcion) {
+                                        case 1:
+                                            nombre = Consola.leer("Ingrese el nombre del contacto: ");
+                                            telefono = Consola.leerEntero("Ingrese el telefono del contacto: ");
+                                            marca = Consola.leer("Ingrese la marca del vehiculo: ");
+                                            placa = Consola.leer("Ingrese la placa del vehiculo: ");
+                                            a = new Usuario(nombre, telefono, marca, placa);
+                                            vehiculosTaller.agregarVehiculo(a);
+                                            break;
+                        
+                                        case 2:
+                                            nombre = Consola.leer("Ingrese el nombre del usuario que ingreso el vehiculo: ");
+                                            vehiculosTaller.BuscarUsuarioNombre(nombre);
+                                            break;
+                                        case 3:
+                                            placa = Consola.leer("Ingrese la placa del vehiculo: ");
+                                            vehiculosTaller.BuscarVehiculoPlaca(placa);
+                                            break;
+                                        case 4:
+                                            placa = Consola.leer("Ingrese la placa del vehiculo que desea eliminar: ");
+                                            vehiculosTaller.RetirarVehiculo(placa);
+                                            break;
+                                        case 5:
+                                            salir = true;
+                                            break;
+                                        default:
+                                            Consola.escribir("Opcion incorrecta");
+                                            break;
+                                    }
+                                }
+                        
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+                <p>Clase usuario</p>
+                <pre>
+                    <code class="language-java">
+                        public class Usuario {
+                            private String nombre;
+                            private Integer telefono;
+                            private String marca;
+                            private String placa;
+                        
+                            public Usuario(String nombre, Integer telefono, String marca, String placa) {
+                                this.nombre = nombre;
+                                this.telefono = telefono;
+                                this.marca = marca;
+                                this.placa = placa;
+                            }
+                        
+                            public String getNombre() {
+                                return nombre;
+                            }
+                        
+                            public void setNombre(String nombre) {
+                                this.nombre = nombre;
+                            }
+                        
+                            public Integer getTelefono() {
+                                return telefono;
+                            }
+                        
+                            public void setTelefono(Integer telefono) {
+                                this.telefono = telefono;
+                            }
+                        
+                            public String getMarca() {
+                                return marca;
+                            }
+                        
+                            public void setMarca(String marca) {
+                                this.marca = marca;
+                            }
+                        
+                            public String getPlaca() {
+                                return placa;
+                            }
+                        
+                            public void setPlaca(String placa) {
+                                this.placa = placa;
+                            }
+                        
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase Taller</p>
+                <pre>
+                    <code class="language-java">
+                        public class Taller {
+                            private Usuario[] usuarios;
+                        
+                            public Taller() {
+                                usuarios = new Usuario[5];
+                            }
+                        
+                            public void agregarVehiculo(Usuario a) {
+                        
+                                if (existeVehiculo(a)) {
+                                    Consola.escribir("El auto ya existe con esta placa");
+                                } else {
+                                    Boolean EsIgual = false;
+                                    for (int i = 0; i < usuarios.length && !EsIgual; i++) {
+                                        if (usuarios[i] == null) {
+                                            usuarios[i] = a;
+                                            EsIgual = true;
+                                        }
+                                    }
+                                    if (EsIgual) {
+                                        Consola.escribir("Vehiculo agregado");
+                                    } else {
+                                        Consola.escribir("No existe espacio para otro Usuario");
+                                    }
+                        
+                                }
+                            }
+                        
+                            public Boolean existeVehiculo(Usuario a) {
+                                Boolean Existe = false;
+                                for (int i = 0; i < usuarios.length && !Existe; i++) {
+                                    if (usuarios[i] != null) {
+                                        if (usuarios[i].getPlaca().equals(a.getPlaca())) {
+                                            Existe = true;
+                                        }
+                                    }
+                                }
+                                return Existe;
+                            }
+                        
+                            public void BuscarUsuarioNombre(String nombre) {
+                                Boolean UsuarioEncontrado = false;
+                                for (int i = 0; i < usuarios.length && !UsuarioEncontrado; i++) {
+                                    if (usuarios[i] != null) {
+                                        if (usuarios[i].getNombre().equalsIgnoreCase(nombre)) {
+                                            Consola.escribir("El Usuario con nombre " + nombre + " existe"
+                                                    + " e ingreso el vehiculo de marca " + usuarios[i].getMarca() + " y la placa "
+                                                    + usuarios[i].getPlaca());
+                                            UsuarioEncontrado = true;
+                                        }
+                                    }
+                                }
+                                if (!UsuarioEncontrado) {
+                                    Consola.escribir("No existe un Usuario con el nombre " + nombre);
+                                }
+                            }
+                        
+                            public void BuscarVehiculoPlaca(String placa) {
+                                Boolean UsuarioEncontrado = false;
+                                for (int i = 0; i < usuarios.length && !UsuarioEncontrado; i++) {
+                                    if (usuarios[i] != null) {
+                                        if (usuarios[i].getPlaca().equals(placa)) {
+                                            Consola.escribir("El vehiculo con placa " + placa + " es de marca " + usuarios[i].getMarca()
+                                                    + "y usuario que lo registro fue " + usuarios[i].getNombre() + " y el telefono "
+                                                    + usuarios[i].getTelefono());
+                                            UsuarioEncontrado = true;
+                                        }
+                                    }
+                                }
+                                if (!UsuarioEncontrado) {
+                                    Consola.escribir("No existe un vehiculo con el telefono " + placa);
+                                }
+                            }
+                        
+                            public void RetirarVehiculo(String placa) {
+                                Boolean eliminado = false;
+                                for (int i = 0; i < usuarios.length && !eliminado; i++) {
+                                    if (usuarios[i] != null) {
+                                        if (usuarios[i].getPlaca().equalsIgnoreCase(placa)) {
+                                            usuarios[i] = null;
+                                            Consola.escribir("Usuario eliminado");
+                                            eliminado = true;
+                                        }
+                                    }
+                                }
+                                if (!eliminado) {
+                                    Consola.escribir("No existe un vehiculo con la placa " + placa);
+                                }
+                        
+                            }
+                        }
+                        
+                    </code>
+                    
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 8</button>
+        <div class="panel">
+            <p>
+                La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en
+                los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el
+                trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso
+                al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si
+                fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga
+                presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.
+            </p>
+            <div class="codigo">
+                <pre>
+                    <code class="language-java">
+                        public class App {
+                            public static void main(String[] args) {
+                        
+                                Boolean salir = false;
+                                String nombre;
+                                String ingreso;
+                                Boolean presento;
+                                String paso;
+                                Boolean aprobo;
+                                Usuarios a;
+                                Cursos curso = new Cursos();
+                                int opcion;
+                        
+                                while (!salir) {
+                                    Consola.escribir("1. Agregar usuario");
+                                    Consola.escribir("2. Consultar usuarios del curso");
+                                    Consola.escribir("3. Eliminar usuario");
+                                    Consola.escribir("4. Salir");
+                                    opcion = Consola.leerEntero("Ingrese una opcion: ");
+                        
+                                    switch (opcion) {
+                                        case 1:
+                                            nombre = Consola.leer("Ingrese el nombre del estudiante: ");
+                                            ingreso = Consola.leer("Ingrese si el estudiante ha presentado el curso (si/no): ");
+                                            if (ingreso.equalsIgnoreCase("si")) {
+                                                presento = true;
+                                            } else {
+                                                presento = false;
+                                            }
+                                            paso = Consola.leer("Ingrese si el estudiante aprobó el curso (si/no): ");
+                                            if (paso.equalsIgnoreCase("si")) {
+                                                aprobo = true;
+                                            } else {
+                                                aprobo = false;
+                                            }
+                                            a = new Usuarios(nombre, presento, aprobo);
+                                            curso.agregarUsuario(a);
+                                            break;
+                        
+                                        case 2:
+                                            curso.UsuariosAprobados();
+                        
+                                            break;
+                                        case 3:
+                                            nombre = Consola.leer("Ingrese el nombre del estudiante: ");
+                                            curso.eliminarUsuario(nombre);
+                                            break;
+                                        case 4:
+                                            salir = true;
+                                            break;
+                        
+                                        default:
+                                            Consola.escribir("Opcion incorrecta");
+                                            break;
+                                    }
+                                }
+                        
+                            }
+                        }
+                    </code>
+                    
+                </pre>
+                <p>Clase cursos</p>
+                <pre>
+                    <code class="language-java">
+                        public class Cursos {
+
+                            private Usuarios[] usuario;
+                        
+                            public Cursos() {
+                                usuario = new Usuarios[8];
+                            }
+                        
+                            public void agregarUsuario(Usuarios a) {
+                        
+                                if (existeUsuario(a)) {
+                                    Consola.escribir("El usuario ya existe con este nombre");
+                                } else {
+                                    Boolean EsIgual = false;
+                                    for (int i = 0; i < usuario.length && !EsIgual; i++) {
+                                        if (usuario[i] == null) {
+                                            usuario[i] = a;
+                                            EsIgual = true;
+                                        }
+                                    }
+                                    if (EsIgual) {
+                                        Consola.escribir("Usuario agregado");
+                                    } else {
+                                        Consola.escribir("No existe espacio para otro Usuario");
+                                    }
+                        
+                                }
+                            }
+                        
+                            public Boolean existeUsuario(Usuarios a) {
+                                Boolean Existe = false;
+                                for (int i = 0; i < usuario.length && !Existe; i++) {
+                                    if (usuario[i] != null) {
+                                        if (usuario[i].getNombre().equals(a.getNombre())) {
+                                            Existe = true;
+                                        }
+                                    }
+                                }
+                                return Existe;
+                            }
+                        
+                            public void UsuariosAprobados() {
+                                for (int i = 0; i < usuario.length; i++) {
+                                    if (usuario[i] != null) {
+                                        if (usuario[i].getIngreso() == true) {
+                                            if (usuario[i].getResultado() == true) {
+                                                Consola.escribir("El usuario " + usuario[i].getNombre() + " aprobó el curso");
+                                            } else {
+                                                Consola.escribir("El usuario " + usuario[i].getNombre() + " presento el curso pero no aprobó");
+                                            }
+                                        } else {
+                                            Consola.escribir("El usuario " + usuario[i].getNombre() + " no ha presentado el curso");
+                                        }
+                                    }
+                                }
+                            }
+                        
+                            public void eliminarUsuario(String nombre) {
+                                Boolean encontro = false;
+                                for (int i = 0; i < usuario.length && !encontro; i++) {
+                                    if (usuario[i] != null) {
+                                        if (usuario[i].getNombre().equals(nombre)) {
+                                            usuario[i] = null;
+                                            Consola.escribir("Usuario eliminado");
+                                            encontro = true;
+                                        }
+                                    }
+                                }
+                            }
+                        
+                        }
+                        
+                    </code>
+                </pre>
+                <p>Clase Usuarios</p>
+                <pre>
+                    <code class="language-java">
+                        public class Usuarios {
+                            private String nombre;
+                            private Boolean ingreso;
+                            private Boolean resultado;
+                        
+                            public Usuarios(String nombre, Boolean ingreso, Boolean resultado) {
+                                this.nombre = nombre;
+                                this.ingreso = ingreso;
+                                this.resultado = resultado;
+                            }
+                        
+                            public String getNombre() {
+                                return nombre;
+                            }
+                        
+                            public void setNombre(String nombre) {
+                                this.nombre = nombre;
+                            }
+                        
+                            public Boolean getIngreso() {
+                                return ingreso;
+                            }
+                        
+                            public void setIngreso(Boolean ingreso) {
+                                this.ingreso = ingreso;
+                            }
+                        
+                            public Boolean getResultado() {
+                                return resultado;
+                            }
+                        
+                            public void setResultado(Boolean resultado) {
+                                this.resultado = resultado;
+                            }
+                        
+                        }
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+    </div>
+    <div class="contenedor_botones">
+        <a href="/3. portafolio/java/java.html" class="boton_final">
+            <span>Página principal</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

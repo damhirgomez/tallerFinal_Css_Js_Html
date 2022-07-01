@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taller arreglos</title>
+    <script async src="javascript/paginas.js"></script>
+    <script async src="/3. portafolio/javascript/paginas.js"></script>
+    <link rel="stylesheet" href="/3. portafolio/estilos/style_index.css" />
+    <link rel="stylesheet" href="/3. portafolio/estilos/prism/prism-style.css" />
+</head>
+
+<body onload="main()">
+    <h1>Taller arreglos PSeInt con funciones</h1>
+    <div class="seccion">
+        <button class="menu-acordeon">Ejercicio 1</button>
+        <div class="panel">
+            <p>
+                Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después
+                de recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su
+                valor de la siguiente manera:
+            </p>
+            <br>
+            <img src="img/taller4_1.jpg" alt="">
+            <div class="codigo">
+                <pre>
+                    <code class="language-markup">
+                    Proceso taller_5_ejercicio_arreglos_1
+	
+                        Definir vector, contador Como Entero;
+                        Dimension vector[5];
+                        Escribir 'Ingrese numero en cada posición';
+                        EscribirVector(vector);
+                        LeerVector(vector);
+                    FinProceso
+                    
+                    SubProceso EscribirVector(vector)
+                        Definir a Como Entero;
+                        Para a<-0 Hasta 4 Con Paso 1 Hacer
+                            Escribir 'Posición [',a,']';
+                            Leer vector[a];
+                        FinPara
+                        
+                    FinSubProceso
+                    
+                    SubProceso LeerVector(vector)
+                        Definir contador como entero;
+                        Para contador<-0 Hasta 4 Con Paso 1 Hacer
+                            Escribir '[',contador,']',' = ', vector[contador];
+                        FinPara
+                        
+                        
+                    FinSubProceso
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 2</button>
+        <div class="panel">
+            <p>
+                Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios
+                entre 1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo
+                diferente al que se usó para llenarse e imprimir los números pares e impares. Ejemplo: <br>
+                <br>
+                Números pares: 2, 4, 6, 8, 10 <br>
+                <br>
+                Números impares: 1, 3, 5, 7, 9
+            </p>
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+            Proceso taller_5_ejercicio_arreglos_2
+	
+                Definir vector Como Entero;
+                Dimension vector[20];
+                EscribirVector(vector);
+                LeerVector(vector);
+            FinProceso
+            
+            SubProceso EscribirVector(vector)
+                Definir a, num Como Entero;
+                Para a<-0 Hasta 19 Con Paso 1 Hacer
+                    num <- Aleatorio(0,101);
+                    vector[a]<- num;
+                FinPara
+                
+            FinSubProceso
+            
+            SubProceso LeerVector(vector)
+            Definir contador_2, resultado Como Entero;
+                Escribir 'Números pares: 'Sin Saltar;
+                Para contador_2<- 0 Hasta 19 Con Paso 1 Hacer
+                    resultado <- vector[contador_2] % 2;
+                    Si resultado = 0 Entonces
+                        Escribir ', ',vector[contador_2] Sin Saltar;
+                    FinSi
+                FinPara
+                Escribir '';
+                Escribir 'Números impares: 'Sin Saltar;
+                Para contador_2<- 0 Hasta 19 Con Paso 1 Hacer
+                    resultado <- vector[contador_2] % 2;
+                    Si resultado <> 0 Entonces
+                        Escribir ', ',vector[contador_2] Sin Saltar;
+                    FinSi
+                FinPara
+                
+            FinSubProceso
+              </code>
+            </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 3</button>
+        <div class="panel">
+
+            <p>
+                Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.
+            </p>
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+                    
+                Proceso taller_5_ejercicio_arreglos_3
+                        
+                    PrimosVector();
+
+                FinProceso
+
+                SubProceso PrimosVector()
+
+                    Definir contador_2,contador_3, contador_4 Como Entero;
+                    contador_4 <- 0;
+
+                    Escribir 'Número primos: 'Sin Saltar;
+                    Para contador_2<-1 Hasta 1000 Con Paso 1 Hacer
+                        Para contador_3<-1 Hasta contador_2 Con Paso 1 Hacer
+                            Si contador_2%contador_3=0 Entonces
+                                contador_4 <- contador_4 + 1;
+                            FinSi
+                        FinPara
+                        Si contador_4 = 2 Entonces
+                            Escribir contador_2,', ' Sin Saltar;
+                        FinSi
+                        contador_4 <- 0;
+                    FinPara
+
+                FinSubProceso
+
+              </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 4</button>
+        <div class="panel">
+            <p>
+                Dada la siguiente matriz bidimensional, el cual debe de quemar en el código <br>
+                01 02 03 04 05 <br>
+                06 07 08 09 10 <br>
+                11 12 13 14 15<br>
+                16 17 18 19 20<br>
+                <br>
+                Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente
+                matriz bidimensional.<br>
+                <br>
+                01 02 03 04 05<br>
+                10 09 08 07 06<br>
+                11 12 13 14 15<br>
+                20 19 18 17 16<br>
+            </p>
+            <div class="codigo">
+                <pre>
+              <code class="language-markup">
+            Proceso taller_5_ejercicio_arreglos_4
+                Definir matriz Como Caracter;
+                Dimension matriz[4,5];
+                matriz[0,0] <- '01';
+                matriz[0,1] <- '02';
+                matriz[0,2] <- '03';
+                matriz[0,3] <- '04';
+                matriz[0,4] <- '05';
+                matriz[1,0] <- '06';
+                matriz[1,1] <- '07';
+                matriz[1,2] <- '08';
+                matriz[1,3] <- '09';
+                matriz[1,4] <- '10';
+                matriz[2,0] <- '11';
+                matriz[2,1] <- '12';
+                matriz[2,2] <- '13';
+                matriz[2,3] <- '14';
+                matriz[2,4] <- '15';
+                matriz[3,0] <- '16';
+                matriz[3,1] <- '17';
+                matriz[3,2] <- '18';
+                matriz[3,3] <- '19';
+                matriz[3,4] <- '20';
+                ImprimirMatriz(matriz);
+                Escribir '';
+                Matrizinvertida(matriz);
+            FinProceso
+            
+            SubProceso ImprimirMatriz(matriz)
+                Definir fila, columna Como Entero;
+                Para fila<-0 Hasta 3 Con Paso 1 Hacer
+                    Para columna<-0 Hasta 4 Con Paso 1 Hacer
+                        Escribir matriz[fila,columna],' ' Sin Saltar;
+                    FinPara
+                    Escribir ' ';
+                FinPara	
+            FinSubProceso
+            
+            SubProceso Matrizinvertida(matriz)
+                Definir fila, columna Como Entero;
+                Para fila<-0 Hasta 3 Con Paso 1 Hacer
+                    Si (fila = 1) o (fila = 3) Entonces
+                        Para columna<-4 Hasta 0 Con Paso -1 Hacer
+                            Escribir matriz[fila,columna],' ' Sin Saltar;
+                        FinPara
+                    SiNo
+                        Para columna<-0 Hasta 4 Con Paso 1 Hacer
+                            Escribir matriz[fila,columna],' ' Sin Saltar;
+                        FinPara
+                    FinSi
+                    Escribir ' ';
+                FinPara	
+                
+            FinSubProceso
+              </code>
+          </pre>
+            </div>
+        </div>
+        <button class="menu-acordeon">Ejercicio 5</button>
+        <div class="panel">
+            <p>
+                Se debe de imprimir el siguiente cuadro
+            </p>
+            <img src="img/multiplicar_2.jpg" alt="">
+            <p>
+                El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de cada
+                celda debe estar previamente calculado en una matriz bidimensional la cual cada resultado obedecerá a la
+                fila y columna insertada por el usuario.
+            </p>
+            <div class="codigo">
+                <pre>
+                <code class="language-markup">
+                Proceso taller_5_ejercicio_arreglos_5
+                    Definir matriz Como Entero;
+                    Dimension matriz[10,10];
+                
+                    Imprimirtabla();
+                    
+                    tablamultiplicar(matriz);
+                FinProceso
+                
+                SubProceso Imprimirtabla()
+                    Definir columna,fila,contador_1,contador_2 Como Entero;
+                    contador_1 <- 1;
+                    contador_2 <- 1;
+                    Para columna<-0 Hasta 9 Con Paso 1 Hacer
+                        Para fila<-0 Hasta 9 Con Paso 1 Hacer
+                            Escribir contador_2,' x ', contador_1,'     ' Sin Saltar;
+                            contador_2 <- contador_2 +1;
+                        FinPara
+                        Escribir '';
+                        contador_2 <- 1;
+                        contador_1 <- contador_1 +1;
+                    FinPara	
+                    
+                FinSubProceso
+                
+                SubProceso tablamultiplicar(matriz)
+                    Definir columna,fila,contador_1,contador_2,fila_usuario,columna_usuario Como Entero;
+                    contador_1 <- 1;
+                    contador_2 <- 1;
+                    Para fila<-0 Hasta 9 Con Paso 1 Hacer
+                        Para columna<-0 Hasta 9 Con Paso 1 Hacer
+                            matriz[fila,columna] <- contador_1 * contador_2;
+                            contador_2 <- contador_2 +1;
+                        FinPara
+                        contador_2 <- 1;
+                        contador_1 <- contador_1 +1;
+                    FinPara
+                    Escribir 'ingrese la fila que desea conocer';
+                    Leer fila_usuario;
+                    Escribir 'ingrese la columna que desea conocer';
+                    Leer columna_usuario;
+                    
+                    Escribir matriz[fila_usuario-1,columna_usuario-1];	
+                FinSubProceso
+                </code>
+            </pre>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="contenedor_botones">
+        <a href="pseint_taller5.html" class="boton_final">
+            <span>volver a taller 5</span>
+            <svg>
+                <rect x="0" y="0" fill="none"></rect>
+            </svg></a>
+    </div>
+    <script src="/3. portafolio/estilos/prism/prism_script.js"></script>
+</body>
+
+</html>

@@ -79,3 +79,19 @@ const imprimirConsola = (referencia, nombreClase) => {
     `${referencia}` + " " + document.getElementById(`${nombreClase}`).value
   );
 };
+
+const main = () => {
+  if (localStorage.getItem("theme")) {
+    valorTema = localStorage.getItem("theme");
+    console.log(valorTema);
+    const valorCambiar = document.querySelector("#root");
+    var rectificar = valorCambiar.classList;
+    console.log(rectificar.length);
+    if (rectificar.length > 0) {
+      rectificar.remove("dark");
+      rectificar.remove("light");
+      rectificar.remove("original");
+    }
+    rectificar.toggle(valorTema);
+  }
+};

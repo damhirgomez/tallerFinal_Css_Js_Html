@@ -1,0 +1,229 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:root,
+:root.light {
+  --bg-color: #fff;
+  --text-color: #123;
+  --btn-color: #123;
+  --btn-text-color: #fff;
+}
+ 
+:root.dark {
+  --bg-color: #121212;
+  --text-color: #696d7d;
+  --btn-color: #696d7d;
+  --btn-text-color: #121212;
+}
+ 
+:root.original {
+  --bg-color: #06283d;
+  --text-color: #b3e8e5;
+  --btn-color: #b3e8e5;
+  --btn-text-color: #06283d;
+}
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: monospace;
+  font-size: 100%;
+}
+h1 {
+  font-family: monospace;
+  font-size: 2.5em;
+  color: var(--text-color);
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: block;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.formulario h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.formulario li,
+.formulario .grid {
+  margin-top: 10px;
+}
+.correcto {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+  transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.formulario button {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+textarea {
+  height: 170px;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario button:hover,
+.formulario button:focus {
+  background: var(--bg-color);
+  transform: scale(1.05);
+}
+
+.formulario button {
+  font-weight: bold;
+}
+/* .correcto-on {
+    background-color: red;
+} */
+
+.formulario button > * {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+p {
+    font-family: monospace;
+    color:var(--text-color);
+    text-align: center;
+}
+
+.formulario__mensaje-exito {
+    font-size: 1.5em;
+    display: none;
+}
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+.error-mensaje {
+    font-size: 1.5em;
+    display: none;
+}
+.error_mensaje {
+  font-size: 1.5em;
+  display: none;
+}
+
+.error-mensaje-activo {
+    display: block;
+}
+
+.error {
+    display: none;
+}
+
+.incorrecto {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid;
+  color: var(--text-color);
+  background-color: red;
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+.boton_final {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  background: none;
+  color: var(--text-color);
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.contenedor_botones {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content;
+  gap: 40px;
+  width: 100%;
+  margin: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.boton_final span {
+  position: relative;
+  z-index: 2;
+  transition: 0.3s ease all;
+}
+.boton_final svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: none;
+}
+
+.boton_final rect {
+  width: 100%;
+  height: 100%;
+  stroke: var(--text-color);
+  stroke-width: 10px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: 0.4s ease all;
+}
+
+.boton_final:hover rect {
+  stroke-dashoffset: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
